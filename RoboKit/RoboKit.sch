@@ -9416,6 +9416,11 @@ Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <pinref part="U$1" gate="G$1" pin="37"/>
 <label x="40.64" y="60.96" size="0.762" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="X6" gate="-1" pin="S"/>
+<wire x1="101.6" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
+<label x="99.06" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="3V3" class="0">
 <segment>
@@ -9533,11 +9538,6 @@ Number of pins: &lt;b&gt;3&lt;/b&gt;&lt;b&gt;&lt;P&gt;
 <wire x1="-7.62" y1="91.44" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="P2" gate="G$1" pin="3"/>
 <label x="20.32" y="91.44" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="X6" gate="-1" pin="S"/>
-<wire x1="101.6" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
-<label x="99.06" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VIN" class="0">
