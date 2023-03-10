@@ -163,10 +163,20 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="160" y2="0" width="0" layer="20"/>
-<wire x1="160" y1="0" x2="160" y2="100" width="0" layer="20"/>
-<wire x1="160" y1="100" x2="0" y2="100" width="0" layer="20"/>
-<wire x1="0" y1="100" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="2" y1="0" x2="132" y2="0" width="0.001" layer="20"/>
+<wire x1="132" y1="0" x2="134" y2="2" width="0.001" layer="20" curve="90"/>
+<wire x1="134" y1="2" x2="134" y2="80" width="0.001" layer="20"/>
+<wire x1="134" y1="80" x2="132" y2="82" width="0.001" layer="20" curve="90"/>
+<wire x1="132" y1="82" x2="2" y2="82" width="0.001" layer="20"/>
+<wire x1="2" y1="82" x2="0" y2="80" width="0.001" layer="20" curve="90"/>
+<wire x1="0" y1="80" x2="0" y2="2" width="0.001" layer="20"/>
+<wire x1="0" y1="2" x2="2" y2="0" width="0.001" layer="20" curve="90"/>
+<circle x="3" y="3" radius="1.5" width="0.001" layer="20"/>
+<circle x="131" y="3" radius="1.5" width="0.001" layer="20"/>
+<circle x="3" y="17" radius="1.5" width="0.001" layer="20"/>
+<circle x="131" y="17" radius="1.5" width="0.001" layer="20"/>
+<circle x="3" y="41" radius="1.5" width="0.001" layer="20"/>
+<circle x="131" y="41" radius="1.5" width="0.001" layer="20"/>
 </plain>
 <libraries>
 <library name="con-jst-ph">
