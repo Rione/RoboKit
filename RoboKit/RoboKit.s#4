@@ -8941,9 +8941,9 @@ distributor RS Components</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.75" drill="0">
 </class>
-<class number="2" name="power" width="0.42" drill="0.1016">
+<class number="2" name="power" width="1.8" drill="0.1016">
 </class>
 </classes>
 <parts>
@@ -8951,15 +8951,12 @@ distributor RS Components</description>
 <part name="U$3" library="AE-DRV8835" deviceset="AE-DRV8835" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VOUT"/>
 <part name="U$2" library="AE-DRV8835" deviceset="AE-DRV8835" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device="" value="VOUT"/>
 <part name="U$4" library="AE-BNO055" deviceset="AE-BNO055-BO" device=""/>
-<part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P1" library="con-jst-ph" deviceset="B6B-PH-K" device=""/>
 <part name="P2" library="con-jst-ph" deviceset="B6B-PH-K" device=""/>
@@ -9014,9 +9011,6 @@ distributor RS Components</description>
 <instance part="GND4" gate="1" x="96.52" y="101.6" smashed="yes">
 <attribute name="VALUE" x="93.98" y="99.06" size="1.778" layer="96"/>
 </instance>
-<instance part="P+3" gate="VCC" x="88.9" y="127" smashed="yes">
-<attribute name="VALUE" x="86.36" y="127" size="1.778" layer="96"/>
-</instance>
 <instance part="P+4" gate="VCC" x="58.42" y="127" smashed="yes">
 <attribute name="VALUE" x="55.88" y="127" size="1.778" layer="96"/>
 </instance>
@@ -9029,16 +9023,10 @@ distributor RS Components</description>
 <instance part="GND2" gate="1" x="45.72" y="101.6" smashed="yes">
 <attribute name="VALUE" x="43.18" y="99.06" size="1.778" layer="96"/>
 </instance>
-<instance part="P+1" gate="VCC" x="38.1" y="127" smashed="yes">
-<attribute name="VALUE" x="35.56" y="127" size="1.778" layer="96"/>
-</instance>
 <instance part="P+2" gate="VCC" x="7.62" y="127" smashed="yes">
 <attribute name="VALUE" x="5.08" y="127" size="1.778" layer="96"/>
 </instance>
 <instance part="U$4" gate="G$1" x="81.28" y="63.5" smashed="yes" rot="R270"/>
-<instance part="P+5" gate="VCC" x="71.12" y="73.66" smashed="yes">
-<attribute name="VALUE" x="68.58" y="73.66" size="1.778" layer="96"/>
-</instance>
 <instance part="GND5" gate="1" x="71.12" y="55.88" smashed="yes">
 <attribute name="VALUE" x="68.58" y="53.34" size="1.778" layer="96"/>
 </instance>
@@ -9433,7 +9421,7 @@ distributor RS Components</description>
 <label x="5.08" y="20.32" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="VBUS" class="0">
+<net name="VBUS" class="2">
 <segment>
 <wire x1="40.64" y1="68.58" x2="38.1" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="40"/>
@@ -9459,27 +9447,28 @@ distributor RS Components</description>
 <wire x1="271.78" y1="86.36" x2="274.32" y2="86.36" width="0.1524" layer="91"/>
 <label x="274.32" y="86.36" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="VIN"/>
+<wire x1="78.74" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="68.58" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
+<label x="71.12" y="71.12" size="1.778" layer="95" xref="yes"/>
+</segment>
 </net>
-<net name="VSYS" class="0">
+<net name="VSYS" class="2">
 <segment>
 <wire x1="40.64" y1="66.04" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="39"/>
 <label x="40.64" y="66.04" size="0.762" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="3V3_EN" class="0">
+<net name="3V3_EN" class="2">
 <segment>
 <wire x1="40.64" y1="60.96" x2="38.1" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="37"/>
 <label x="40.64" y="60.96" size="0.762" layer="95" xref="yes"/>
 </segment>
-<segment>
-<pinref part="X6" gate="-1" pin="S"/>
-<wire x1="101.6" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
-<label x="99.06" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
 </net>
-<net name="3V3" class="0">
+<net name="3V3" class="2">
 <segment>
 <wire x1="40.64" y1="58.42" x2="38.1" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="36"/>
@@ -9489,6 +9478,33 @@ distributor RS Components</description>
 <pinref part="CONNECTOR1" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="147.32" x2="104.14" y2="147.32" width="0.1524" layer="91"/>
 <label x="104.14" y="147.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X6" gate="-1" pin="S"/>
+<wire x1="101.6" y1="83.82" x2="99.06" y2="83.82" width="0.1524" layer="91"/>
+<label x="99.06" y="83.82" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="38.1" y1="121.92" x2="35.56" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="VCC"/>
+<wire x1="38.1" y1="121.92" x2="38.1" y2="124.46" width="0.1524" layer="91"/>
+<label x="38.1" y="124.46" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="88.9" y1="121.92" x2="86.36" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="VCC"/>
+<wire x1="88.9" y1="121.92" x2="88.9" y2="124.46" width="0.1524" layer="91"/>
+<label x="88.9" y="124.46" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<wire x1="-7.62" y1="91.44" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="P2" gate="G$1" pin="3"/>
+<label x="20.32" y="91.44" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="73.66" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="P1" gate="G$1" pin="3"/>
+<label x="71.12" y="91.44" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="ADC_VREF" class="0">
@@ -9567,37 +9583,7 @@ distributor RS Components</description>
 <pinref part="U$2" gate="G$1" pin="BIN2"/>
 </segment>
 </net>
-<net name="VCC" class="0">
-<segment>
-<wire x1="88.9" y1="121.92" x2="86.36" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="VCC"/>
-<wire x1="88.9" y1="121.92" x2="88.9" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="P+3" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
-<wire x1="38.1" y1="121.92" x2="35.56" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
-<wire x1="38.1" y1="121.92" x2="38.1" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="P+1" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
-<pinref part="U$4" gate="G$1" pin="VIN"/>
-<wire x1="78.74" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="68.58" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="P+5" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
-<wire x1="73.66" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="P1" gate="G$1" pin="3"/>
-<label x="71.12" y="91.44" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="-7.62" y1="91.44" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="P2" gate="G$1" pin="3"/>
-<label x="20.32" y="91.44" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="VIN" class="0">
+<net name="VIN" class="2">
 <segment>
 <pinref part="CON2" gate="G$1" pin="+"/>
 <wire x1="137.16" y1="68.58" x2="142.24" y2="68.58" width="0.1524" layer="91"/>
@@ -9870,7 +9856,7 @@ distributor RS Components</description>
 <pinref part="C11" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="V_HIGH" class="0">
+<net name="V_HIGH" class="2">
 <segment>
 <pinref part="U$7" gate="G$1" pin="4"/>
 <pinref part="U$7" gate="G$1" pin="3"/>
@@ -10084,7 +10070,7 @@ distributor RS Components</description>
 <label x="190.5" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="5.0V" class="0">
+<net name="5.0V" class="2">
 <segment>
 <pinref part="X9" gate="-1" pin="S"/>
 <wire x1="256.54" y1="66.04" x2="254" y2="66.04" width="0.1524" layer="91"/>

@@ -9426,6 +9426,19 @@ distributor RS Components</description>
 <pinref part="U$1" gate="G$1" pin="40"/>
 <label x="40.64" y="68.58" size="0.762" layer="95" xref="yes"/>
 </segment>
+</net>
+<net name="VSYS" class="2">
+<segment>
+<wire x1="40.64" y1="66.04" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="39"/>
+<label x="40.64" y="66.04" size="0.762" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="VIN"/>
+<wire x1="78.74" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="68.58" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
+<label x="71.12" y="71.12" size="1.778" layer="95" xref="yes"/>
+</segment>
 <segment>
 <pinref part="X5" gate="-1" pin="S"/>
 <wire x1="101.6" y1="68.58" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
@@ -9445,19 +9458,6 @@ distributor RS Components</description>
 <pinref part="S2" gate="1" pin="S"/>
 <wire x1="271.78" y1="86.36" x2="274.32" y2="86.36" width="0.1524" layer="91"/>
 <label x="274.32" y="86.36" size="1.778" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="U$4" gate="G$1" pin="VIN"/>
-<wire x1="78.74" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="68.58" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
-<label x="71.12" y="71.12" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="VSYS" class="2">
-<segment>
-<wire x1="40.64" y1="66.04" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="39"/>
-<label x="40.64" y="66.04" size="0.762" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="3V3_EN" class="2">
