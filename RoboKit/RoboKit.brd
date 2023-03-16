@@ -2640,9 +2640,9 @@ design rules under a new name.</description>
 <via x="79.0575" y="69.215" extent="1-16" drill="0.35"/>
 <wire x1="87.3125" y1="76.2" x2="79.0575" y2="76.2" width="1" layer="16"/>
 <via x="87.3125" y="76.2" extent="1-16" drill="0.35"/>
-<wire x1="87.3125" y1="76.2" x2="94.615" y2="76.2" width="1" layer="1"/>
-<wire x1="95.9612" y1="74.8538" x2="95.9612" y2="73.3044" width="1" layer="1"/>
-<wire x1="94.615" y1="76.2" x2="95.9612" y2="74.8538" width="1" layer="1"/>
+<wire x1="87.3125" y1="76.2" x2="95.5675" y2="76.2" width="1" layer="1"/>
+<wire x1="95.9612" y1="75.8063" x2="95.9612" y2="73.3044" width="1" layer="1"/>
+<wire x1="95.5675" y1="76.2" x2="95.9612" y2="75.8063" width="1" layer="1"/>
 </signal>
 <signal name="VBUS" class="2">
 <contactref element="U$1" pad="40"/>
