@@ -9535,21 +9535,9 @@ distributor RS Components</description>
 <label x="40.64" y="40.64" size="0.762" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="40.64" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="27"/>
-<label x="40.64" y="35.56" size="0.762" layer="95" xref="yes"/>
-</segment>
-<segment>
 <pinref part="S1" gate="1" pin="P1"/>
 <wire x1="121.92" y1="144.78" x2="116.84" y2="144.78" width="0.1524" layer="91"/>
 <label x="116.84" y="144.78" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="IO20" class="0">
-<segment>
-<wire x1="40.64" y1="33.02" x2="38.1" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="26"/>
-<label x="40.64" y="33.02" size="0.762" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="IO19" class="0">
@@ -9757,9 +9745,9 @@ distributor RS Components</description>
 <label x="20.32" y="86.36" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="7.62" y1="30.48" x2="5.08" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="16"/>
-<label x="5.08" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
+<wire x1="40.64" y1="33.02" x2="38.1" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="26"/>
+<label x="40.64" y="33.02" size="0.762" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="HALL_B_L" class="0">
@@ -9769,9 +9757,9 @@ distributor RS Components</description>
 <label x="20.32" y="83.82" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="7.62" y1="27.94" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="17"/>
-<label x="5.08" y="27.94" size="0.762" layer="95" rot="R180" xref="yes"/>
+<wire x1="40.64" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="27"/>
+<label x="40.64" y="35.56" size="0.762" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="VOUT" class="2">
@@ -10079,6 +10067,20 @@ distributor RS Components</description>
 <pinref part="S2" gate="1" pin="P"/>
 <wire x1="254" y1="78.74" x2="269.24" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="269.24" y1="78.74" x2="269.24" y2="76.2" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="IO13" class="0">
+<segment>
+<wire x1="7.62" y1="27.94" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="17"/>
+<label x="5.08" y="27.94" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="IO12" class="0">
+<segment>
+<wire x1="7.62" y1="30.48" x2="5.08" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="16"/>
+<label x="5.08" y="30.48" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
