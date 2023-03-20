@@ -2641,7 +2641,7 @@ design rules under a new name.</description>
 <wire x1="87.3125" y1="76.2" x2="79.0575" y2="76.2" width="1" layer="16"/>
 <via x="87.3125" y="76.2" extent="1-16" drill="0.35"/>
 <wire x1="87.3125" y1="76.2" x2="95.25" y2="76.2" width="1" layer="1"/>
-<wire x1="95.9612" y1="75.4888" x2="95.9612" y2="73.3044" width="0.75" layer="1"/>
+<wire x1="95.9612" y1="75.4888" x2="95.9612" y2="73.3044" width="1" layer="1"/>
 <wire x1="95.25" y1="76.2" x2="95.9612" y2="75.4888" width="1" layer="1"/>
 </signal>
 <signal name="VBUS" class="2">
@@ -3141,7 +3141,7 @@ design rules under a new name.</description>
 <contactref element="CONNECTOR1" pad="2"/>
 <contactref element="S1" pad="3"/>
 <wire x1="89.4588" y1="73.3044" x2="86.5331" y2="73.3044" width="1" layer="16"/>
-<wire x1="86.5331" y1="73.3044" x2="85.5425" y2="74.295" width="1.8" layer="16"/>
+<wire x1="86.5331" y1="73.3044" x2="85.5425" y2="74.295" width="1" layer="16"/>
 </signal>
 <signal name="2X">
 <contactref element="TC4052DP" pad="15"/>
