@@ -8943,7 +8943,7 @@ distributor RS Components</description>
 <classes>
 <class number="0" name="default" width="0.5" drill="0">
 </class>
-<class number="2" name="power" width="1.8" drill="0.1016">
+<class number="2" name="power" width="1" drill="0.1016">
 </class>
 </classes>
 <parts>

@@ -9165,8 +9165,8 @@ distributor RS Components</description>
 <attribute name="NAME" x="124.46" y="126.238" size="1.524" layer="95"/>
 <attribute name="VALUE" x="121.158" y="128.397" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND6" gate="1" x="132.08" y="139.7" smashed="yes">
-<attribute name="VALUE" x="129.54" y="137.16" size="1.778" layer="96"/>
+<instance part="GND6" gate="1" x="132.08" y="137.16" smashed="yes">
+<attribute name="VALUE" x="129.54" y="134.62" size="1.778" layer="96"/>
 </instance>
 <instance part="GND8" gate="1" x="185.42" y="127" smashed="yes">
 <attribute name="VALUE" x="182.88" y="124.46" size="1.778" layer="96"/>
@@ -9330,7 +9330,7 @@ distributor RS Components</description>
 <segment>
 <pinref part="S1" gate="1" pin="S1"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="132.08" y1="144.78" x2="132.08" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="144.78" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="X7" gate="-1" pin="S"/>
