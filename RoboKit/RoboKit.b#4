@@ -2548,8 +2548,8 @@ distributor RS Components</description>
 <wire x1="77.37" y1="26.135" x2="78.74" y2="24.765" width="1" layer="1"/>
 <wire x1="78.74" y1="24.765" x2="78.74" y2="20.32" width="1" layer="1"/>
 <via x="78.74" y="20.32" extent="1-16" drill="0.35"/>
-<wire x1="78.74" y1="20.32" x2="78.74" y2="15.875" width="1" layer="16"/>
-<wire x1="78.74" y1="15.875" x2="82.8675" y2="15.875" width="0.5" layer="16"/>
+<wire x1="78.74" y1="20.32" x2="82.8675" y2="24.4475" width="0.5" layer="16"/>
+<wire x1="82.8675" y1="24.4475" x2="82.8675" y2="15.875" width="0.5" layer="16"/>
 <via x="82.8675" y="15.875" extent="1-16" drill="0.35"/>
 <wire x1="82.8675" y1="15.875" x2="82.8675" y2="8.5725" width="1" layer="1"/>
 <wire x1="82.8675" y1="8.5725" x2="78.4225" y2="8.5725" width="1" layer="1"/>
@@ -2934,14 +2934,15 @@ distributor RS Components</description>
 <contactref element="U$1" pad="2"/>
 <contactref element="U$2" pad="INB2"/>
 <contactref element="U$2" pad="INB1"/>
-<wire x1="50.165" y1="61.595" x2="51.435" y2="60.325" width="0.5" layer="1"/>
-<wire x1="51.435" y1="60.325" x2="51.435" y2="56.515" width="0.5" layer="1"/>
+<wire x1="51.435" y1="36.195" x2="50.165" y2="37.465" width="0.5" layer="1"/>
+<wire x1="50.165" y1="61.595" x2="50.165" y2="37.465" width="0.5" layer="1"/>
 <wire x1="51.435" y1="56.515" x2="50.165" y2="56.515" width="0.5" layer="1"/>
 <wire x1="64.135" y1="18.415" x2="73.3425" y2="18.415" width="0.5" layer="16"/>
 <wire x1="73.3425" y1="18.415" x2="73.3425" y2="23.495" width="0.5" layer="16"/>
 <wire x1="73.3425" y1="23.495" x2="73.4425" y2="23.595" width="0.5" layer="16"/>
 <wire x1="73.4425" y1="23.595" x2="74.9075" y2="23.595" width="0.5" layer="16"/>
-<wire x1="51.435" y1="56.515" x2="51.435" y2="28.8925" width="0.5" layer="1"/>
+<wire x1="51.435" y1="56.515" x2="51.435" y2="36.195" width="0.5" layer="1"/>
+<wire x1="51.435" y1="36.195" x2="51.435" y2="28.8925" width="0.5" layer="1"/>
 <wire x1="64.135" y1="18.415" x2="61.9125" y2="16.1925" width="0.5" layer="16"/>
 <via x="51.435" y="28.8925" extent="1-16" drill="0.35"/>
 <wire x1="61.9125" y1="16.1925" x2="52.3875" y2="16.1925" width="0.5" layer="16"/>
@@ -3020,8 +3021,8 @@ distributor RS Components</description>
 <contactref element="X3" pad="2"/>
 <contactref element="U$2" pad="BOUT2"/>
 <contactref element="U$2" pad="BOUT1"/>
-<wire x1="42.545" y1="64.135" x2="40.64" y2="64.135" width="1.65" layer="1"/>
-<wire x1="40.64" y1="64.135" x2="40.64" y2="59.055" width="1.65" layer="1"/>
+<wire x1="42.545" y1="64.135" x2="40.64" y2="62.23" width="1.65" layer="1"/>
+<wire x1="40.64" y1="62.23" x2="40.64" y2="59.055" width="1.65" layer="1"/>
 <wire x1="40.64" y1="59.055" x2="42.545" y2="59.055" width="1.65" layer="1"/>
 <wire x1="40.64" y1="64.135" x2="38.735" y2="64.135" width="1.65" layer="1"/>
 <wire x1="38.735" y1="64.135" x2="38.735" y2="66.1825" width="1.65" layer="1"/>
