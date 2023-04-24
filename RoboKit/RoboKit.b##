@@ -2414,10 +2414,8 @@ distributor RS Components</description>
 <vertex x="89.535" y="36.195"/>
 <vertex x="90.17" y="36.83"/>
 <vertex x="92.075" y="36.83"/>
-<vertex x="92.3925" y="36.5125"/>
 <vertex x="93.345" y="35.56"/>
-<vertex x="97.4725" y="35.56"/>
-<vertex x="97.4725" y="25.4"/>
+<vertex x="96.8375" y="35.56"/>
 </polygon>
 <polygon width="1" layer="16">
 <vertex x="88.5825" y="71.755"/>
@@ -3440,9 +3438,10 @@ distributor RS Components</description>
 <signal name="2X">
 <contactref element="TC4052DP" pad="15"/>
 <contactref element="X7" pad="5"/>
-<wire x1="83.5025" y1="20.955" x2="86.6601" y2="20.955" width="0.5" layer="16"/>
-<wire x1="86.6601" y1="20.955" x2="86.6601" y2="25.0352375" width="0.5" layer="16"/>
-<wire x1="86.6601" y1="25.0352375" x2="87.4844" y2="25.8595375" width="0.5" layer="16"/>
+<wire x1="86.9776" y1="22.225" x2="84.7725" y2="22.225" width="0.5" layer="16"/>
+<wire x1="83.5025" y1="20.955" x2="84.7725" y2="22.225" width="0.5" layer="16"/>
+<wire x1="86.9776" y1="22.225" x2="86.9776" y2="25.3527375" width="0.5" layer="16"/>
+<wire x1="86.9776" y1="25.3527375" x2="87.4844" y2="25.8595375" width="0.5" layer="16"/>
 <wire x1="87.4844" y1="28.1119" x2="89.2175" y2="29.845" width="0.5" layer="16"/>
 <wire x1="89.2175" y1="29.845" x2="93.9626" y2="29.845" width="0.5" layer="16"/>
 <wire x1="87.4844" y1="25.8595375" x2="87.4844" y2="28.1119" width="0.5" layer="16"/>
