@@ -3021,8 +3021,11 @@ distributor RS Components</description>
 <contactref element="X3" pad="2"/>
 <contactref element="U$2" pad="BOUT2"/>
 <contactref element="U$2" pad="BOUT1"/>
-<wire x1="42.545" y1="64.135" x2="40.64" y2="62.23" width="1.65" layer="1"/>
-<wire x1="40.64" y1="62.23" x2="40.64" y2="59.055" width="1.65" layer="1"/>
+<wire x1="42.545" y1="64.135" x2="41.275" y2="64.135" width="1.65" layer="1"/>
+<wire x1="41.275" y1="64.135" x2="40.3225" y2="63.1825" width="1.65" layer="1"/>
+<wire x1="40.3225" y1="63.1825" x2="40.3225" y2="59.69" width="1.65" layer="1"/>
+<wire x1="40.64" y1="59.3725" x2="40.64" y2="59.055" width="1.65" layer="1"/>
+<wire x1="40.64" y1="59.3725" x2="40.3225" y2="59.69" width="1.65" layer="1"/>
 <wire x1="40.64" y1="59.055" x2="42.545" y2="59.055" width="1.65" layer="1"/>
 <wire x1="40.64" y1="64.135" x2="38.735" y2="64.135" width="1.65" layer="1"/>
 <wire x1="38.735" y1="64.135" x2="38.735" y2="66.1825" width="1.65" layer="1"/>
@@ -3034,6 +3037,7 @@ distributor RS Components</description>
 <wire x1="35.56" y1="42.8625" x2="37.7825" y2="42.8625" width="1.65" layer="1"/>
 <wire x1="39.37" y1="44.45" x2="39.37" y2="52.07" width="1.65" layer="1"/>
 <via x="39.37" y="52.07" extent="1-16" drill="0.35"/>
+<wire x1="41.275" y1="64.135" x2="40.64" y2="64.135" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOTOR_A_L">
 <contactref element="U$2" pad="AOUT1"/>

@@ -2934,12 +2934,12 @@ distributor RS Components</description>
 <contactref element="U$1" pad="2"/>
 <contactref element="U$2" pad="INB2"/>
 <contactref element="U$2" pad="INB1"/>
-<wire x1="51.435" y1="36.195" x2="50.165" y2="37.465" width="0.5" layer="1"/>
-<wire x1="50.165" y1="61.595" x2="50.165" y2="37.465" width="0.5" layer="1"/>
+<wire x1="51.435" y1="60.96" x2="50.8" y2="61.595" width="0.5" layer="1"/>
+<wire x1="50.165" y1="61.595" x2="50.8" y2="61.595" width="0.5" layer="1"/>
+<wire x1="51.435" y1="60.96" x2="51.435" y2="56.515" width="0.5" layer="1"/>
 <wire x1="51.435" y1="56.515" x2="50.165" y2="56.515" width="0.5" layer="1"/>
 <wire x1="69.315" y1="23.595" x2="74.9075" y2="23.595" width="0.5" layer="16"/>
-<wire x1="51.435" y1="56.515" x2="51.435" y2="36.195" width="0.5" layer="1"/>
-<wire x1="51.435" y1="36.195" x2="51.435" y2="28.8925" width="0.5" layer="1"/>
+<wire x1="51.435" y1="56.515" x2="51.435" y2="28.8925" width="0.5" layer="1"/>
 <wire x1="69.315" y1="23.595" x2="61.9125" y2="16.1925" width="0.5" layer="16"/>
 <via x="51.435" y="28.8925" extent="1-16" drill="0.35"/>
 <wire x1="61.9125" y1="16.1925" x2="52.3875" y2="16.1925" width="0.5" layer="16"/>
