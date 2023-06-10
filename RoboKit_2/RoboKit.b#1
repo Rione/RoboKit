@@ -906,6 +906,7 @@
 <wire x1="100.7" y1="5" x2="101.5" y2="5.8" width="0.001" layer="20" curve="90"/>
 <wire x1="101.5" y1="5.8" x2="101.5" y2="10.7" width="0.001" layer="20"/>
 <wire x1="101.5" y1="10.7" x2="100.7" y2="11.5" width="0.001" layer="20" curve="90"/>
+<text x="47.2" y="3.6" size="1.778" layer="21" font="vector" rot="R180">ver2.0</text>
 </plain>
 <libraries>
 <library name="con-jst-ph">
@@ -2962,7 +2963,7 @@ grid 2.5 mm, outline 2.4 x 4.4 mm</description>
 <wire x1="57.5675" y1="25.935" x2="56.1975" y2="27.305" width="1" layer="16"/>
 <wire x1="60.6425" y1="51.335" x2="76.54" y2="51.335" width="1" layer="1"/>
 <wire x1="69.5325" y1="5.715" x2="72.485" y2="2.7625" width="1" layer="1"/>
-<wire x1="74.6125" y1="14.605" x2="71.3" y2="14.605" width="1" layer="1"/>
+<wire x1="74.6125" y1="14.605" x2="71.2" y2="14.605" width="1" layer="1"/>
 <polygon width="0.48" layer="1">
 <vertex x="15.24" y="8.5725"/>
 <vertex x="8.255" y="15.5575"/>
@@ -2986,7 +2987,7 @@ grid 2.5 mm, outline 2.4 x 4.4 mm</description>
 <vertex x="59.055" y="19.3675"/>
 <vertex x="56.1975" y="19.3675"/>
 </polygon>
-<wire x1="71.3" y1="14.605" x2="69.5325" y2="14.605" width="1" layer="1"/>
+<wire x1="71.2" y1="14.605" x2="69.5325" y2="14.605" width="1" layer="1"/>
 <wire x1="60.325" y1="16.51" x2="59.3725" y2="16.51" width="1" layer="16"/>
 <wire x1="59.3725" y1="16.51" x2="58.7375" y2="15.875" width="1" layer="16"/>
 <wire x1="58.7375" y1="15.875" x2="56.8325" y2="15.875" width="1" layer="16"/>
@@ -3143,8 +3144,8 @@ grid 2.5 mm, outline 2.4 x 4.4 mm</description>
 <wire x1="89.2175" y1="66.675" x2="88.265" y2="65.7225" width="1" layer="16"/>
 <wire x1="88.265" y1="65.7225" x2="88.265" y2="56.515" width="1" layer="16"/>
 <contactref element="X1" pad="1"/>
-<wire x1="69.5325" y1="8.89" x2="71.3" y2="8.9" width="0.48" layer="1"/>
-<wire x1="71.3" y1="8.9" x2="71.3" y2="14.605" width="1" layer="1"/>
+<wire x1="69.5325" y1="8.89" x2="71.2" y2="8.899434375" width="0.48" layer="1"/>
+<wire x1="71.2" y1="8.899434375" x2="71.2" y2="14.605" width="1" layer="1"/>
 </signal>
 <signal name="IO3">
 <contactref element="U$1" pad="5"/>
