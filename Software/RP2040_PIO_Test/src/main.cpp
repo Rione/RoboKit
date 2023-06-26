@@ -60,8 +60,11 @@ void Loop() {
     }
     SerialUSB.println();
 
-    // ラインセンサが白か黒かを判定するメソッド
+    // ラインセンサの値をまとめてプリント
+    Line_t line__ = robot.readLines();
+    robot.printLines(line__);
 
+    // ラインセンサが白か黒かを判定するメソッド
     Line_t lines = robot.readLines();
     bool *isWhite = &lines.isWhite[0];
     for (size_t i = 0; i < LINE_SENSOR_QTY; i++) {

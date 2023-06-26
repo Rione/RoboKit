@@ -96,22 +96,22 @@ int RoboKit::readLine(uint8_t sensor) {
     digitalWrite(MULTIPLEXER_S2_PIN, (sensor & 0b00000100));
     digitalWrite(MULTIPLEXER_S3_PIN, (sensor & 0b00001000));
     line.values[sensor] = analogRead(MULTIPLEXER_ANALOGIN_PIN);
+    if (line.values[sensor] > line.thresholds[sensor]) {
+        line.isWhite[sensor] = true;
+    } else {
+        line.isWhite[sensor] = false;
+    }
     return line.values[sensor];
 }
 
 Line_t RoboKit::readLines() {
     for (int i = 0; i < LINE_SENSOR_QTY; i++) {
         readLine(i);
-        if (line.values[i] > line.thresholds[i]) {
-            line.isWhite[i] = true;
-        } else {
-            line.isWhite[i] = false;
-        }
     }
     return line;
 }
 
-void RoboKit::printLine(bool withRead = false) {
+void RoboKit::printLines(bool withRead = false) {
     if (withRead) readLines();
     for (size_t i = 0; i < LINE_SENSOR_QTY; i++) {
         Serial.print("val[");
@@ -123,7 +123,7 @@ void RoboKit::printLine(bool withRead = false) {
     SerialUSB.println();
 }
 
-void RoboKit::printLine(Line_t line_) {
+void RoboKit::printLines(Line_t &line_) {
     for (size_t i = 0; i < LINE_SENSOR_QTY; i++) {
         Serial.print("val[");
         Serial.print(i);

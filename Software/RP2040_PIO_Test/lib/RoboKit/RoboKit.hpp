@@ -4,9 +4,9 @@
 #include <Arduino.h>
 #include <IOWrapper.hpp>
 #include <Wire.h>
+#include <SPI.h>
 #include <VL53L0X.h>
 #include <timer.h>
-#include <SPI.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BNO055.h>
 
@@ -94,13 +94,13 @@ class RoboKit {
      * @brief ラインセンサーの値をSerial Monitorに表示します。
      * @param withRead ラインセンサーの値を読み取るかどうか(true: 読み取って表示, false: 事前に読んだ値を表示)
      */
-    void printLine(bool withRead);
+    void printLines(bool withRead);
 
     /**
      * @brief ラインセンサーの値をSerial Monitorに表示します。
      * @param line_ ラインセンサーの値を持つLine_t構造体
      */
-    void printLine(Line_t line_);
+    void printLines(Line_t &line_);
 
     /**
      * @brief モーターの動作を制御します。
