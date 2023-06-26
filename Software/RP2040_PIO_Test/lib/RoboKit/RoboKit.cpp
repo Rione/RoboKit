@@ -2,6 +2,7 @@
 
 RoboKit::RoboKit() : led_1(LED_PIN_1), led_2(LED_PIN_2),
                      sw_1(SW_PIN, INPUT_PULLUP),
+                     tof(), bno(55),
                      run(false), line(),
                      CW_R(true), CW_L(true) {
 }
@@ -26,6 +27,14 @@ void RoboKit::init() {
     motor(0, 0);
 
     Wire.begin();
+    initVL53L0X();
+    initBNO055();
+    run = false;
+
+    SerialUSB.println("RoboKit Init!!");
+}
+
+void RoboKit::initVL53L0X() {
     tof.setTimeout(500);
     if (!tof.init()) {
         SerialUSB.println("Failed to detect and initialize sensor!");
@@ -35,9 +44,17 @@ void RoboKit::init() {
     tof.setSignalRateLimit(0.1);
     tof.setVcselPulsePeriod(VL53L0X::VcselPeriodPreRange, 18);
     tof.setVcselPulsePeriod(VL53L0X::VcselPeriodFinalRange, 14);
-    run = false;
+}
 
-    SerialUSB.println("RoboKit Init!!");
+void RoboKit::initBNO055() {
+    // BNO055
+    if (!bno.begin()) {
+        SerialUSB.print("No BNO055 detected");
+        while (1)
+            ;
+    }
+    delay(1000);
+    bno.setExtCrystalUse(true);
 }
 
 void RoboKit::setLineThresold(Line_t &line_) {
@@ -138,11 +155,31 @@ void RoboKit::motor(int L_Power, int R_Power) {
     analogWrite(INB_RIGHT_MOTOR_PWM, outB2);
 }
 
+void RoboKit::setMotorCW(bool CW_R_, bool CW_L_) {
+    CW_R = CW_R_;
+    CW_L = CW_L_;
+}
+
 int RoboKit::getDistance() {
     if (tof.timeoutOccurred()) {
         Serial.print(" TIMEOUT");
     }
     return tof.readRangeSingleMillimeters();
+}
+
+double RoboKit::getYaw() {
+    imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
+    return euler.x();
+}
+
+double RoboKit::getPitch() {
+    imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
+    return euler.y();
+}
+
+double RoboKit::getRoll() {
+    imu::Vector<3> euler = bno.getVector(Adafruit_BNO055::VECTOR_EULER);
+    return euler.z();
 }
 
 bool RoboKit::getRun() {

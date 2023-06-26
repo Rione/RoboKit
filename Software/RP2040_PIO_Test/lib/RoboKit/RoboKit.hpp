@@ -6,6 +6,9 @@
 #include <Wire.h>
 #include <VL53L0X.h>
 #include <timer.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BNO055.h>
 
 // Pin Definition
 #define INA_LEFT_MOTOR_PWM 0
@@ -106,7 +109,27 @@ class RoboKit {
      * @return 距離の値(mm)
      */
     int getDistance();
-    
+
+    /**
+     * @brief Get the Yaw object
+     * @return double() Yaw angle (degree)
+     */
+    double getYaw();
+
+    /**
+     * @brief Get the Pitch object
+     *
+     * @return double Pitch angle (degree)
+     */
+    double getPitch();
+
+    /**
+     * @brief Get the Roll object
+     *
+     * @return double Roll angle (degree)
+     */
+    double getRoll();
+
     /**
      * @brief スイッチが押されたら状態が変化します。
      * @return 実行状態 (true: 実行中, false: 停止中)
@@ -123,8 +146,11 @@ class RoboKit {
     DigitalOut led_2;    /**< LEDピン 2 の制御オブジェクト */
     SwitchObserver sw_1; /**< スイッチピンの状態を監視するオブジェクト */
     VL53L0X tof;         /**< 距離センサーの制御オブジェクト */
+    Adafruit_BNO055 bno; /**< IMUの制御オブジェクト */
 
   private:
+    void initVL53L0X();
+    void initBNO055();
     bool run; /**< ロボットの実行状態 (true: 実行中, false: 停止中) */
     Line_t line;
     bool CW_R;
