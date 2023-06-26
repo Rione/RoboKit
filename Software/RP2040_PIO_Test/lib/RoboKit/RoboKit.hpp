@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <IOWrapper.hpp>
 #include <Wire.h>
+#include <VL53L0X.h>
 #include <timer.h>
 
 // Pin Definition
@@ -93,12 +94,19 @@ class RoboKit {
      */
     void motor(int L_Power, int R_Power);
 
-    /*
+    /**
      * @brief モーターの回転方向を設定します。
      * @param CW_R_ 右モーターの回転方向 (true: CW, false: CCW)
      * @param CW_L_ 左モーターの回転方向 (true: CW, false: CCW)
      **/
     void setMotorCW(bool CW_R_, bool CW_L_);
+
+    /**
+     * @brief ToFセンサーで距離の値を読み取ります。
+     * @return 距離の値(mm)
+     */
+    int getDistance();
+    
     /**
      * @brief スイッチが押されたら状態が変化します。
      * @return 実行状態 (true: 実行中, false: 停止中)
@@ -114,6 +122,7 @@ class RoboKit {
     DigitalOut led_1;    /**< LEDピン 1 の制御オブジェクト */
     DigitalOut led_2;    /**< LEDピン 2 の制御オブジェクト */
     SwitchObserver sw_1; /**< スイッチピンの状態を監視するオブジェクト */
+    VL53L0X tof;         /**< 距離センサーの制御オブジェクト */
 
   private:
     bool run; /**< ロボットの実行状態 (true: 実行中, false: 停止中) */

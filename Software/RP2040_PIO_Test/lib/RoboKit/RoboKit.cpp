@@ -26,7 +26,15 @@ void RoboKit::init() {
     motor(0, 0);
 
     Wire.begin();
-
+    tof.setTimeout(500);
+    if (!tof.init()) {
+        SerialUSB.println("Failed to detect and initialize sensor!");
+        while (1)
+            ;
+    }
+    tof.setSignalRateLimit(0.1);
+    tof.setVcselPulsePeriod(VL53L0X::VcselPeriodPreRange, 18);
+    tof.setVcselPulsePeriod(VL53L0X::VcselPeriodFinalRange, 14);
     run = false;
 
     SerialUSB.println("RoboKit Init!!");
@@ -128,6 +136,13 @@ void RoboKit::motor(int L_Power, int R_Power) {
     analogWrite(INB_LEFT_MOTOR_PWM, outB1);
     analogWrite(INA_RIGHT_MOTOR_PWM, outA2);
     analogWrite(INB_RIGHT_MOTOR_PWM, outB2);
+}
+
+int RoboKit::getDistance() {
+    if (tof.timeoutOccurred()) {
+        Serial.print(" TIMEOUT");
+    }
+    return tof.readRangeSingleMillimeters();
 }
 
 bool RoboKit::getRun() {
