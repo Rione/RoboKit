@@ -4,5 +4,6 @@ void setup() {
     robot.init();
 }
 
-void loop() {
+void Loop() {
+    SerialUSB.println("Hello World!!!");
 }

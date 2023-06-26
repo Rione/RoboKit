@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <IOWrapper.hpp>
 #include <Wire.h>
+#include <timer.h>
 
 // Pin Definition
 #define INA_LEFT_MOTOR_PWM 0
@@ -50,15 +51,31 @@ class RoboKit {
     void init();
     void setLineThresold(Line_t &line_);
     void setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7);
+
     Line_t readLine(uint8_t sensor);
+
     void motor(int L_Power, int R_Power);
     Line_t line;
+
+    bool getRun() {
+        return run;
+    }
+
+    void setRun(bool state) {
+        run = state;
+    }
+
+  private:
+    bool run;
 };
 
 extern RoboKit robot;
 
 extern DigitalOut led_1;
 extern DigitalOut led_2;
-extern DigitalIn sw_1;
+// extern DigitalIn sw_1;
+extern SwitchObserver sw_1;
+
+extern void Loop();
 
 #endif

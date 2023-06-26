@@ -3,7 +3,6 @@
 RoboKit::RoboKit() {
 }
 
-
 void RoboKit::init() {
     // Line sensor
     pinMode(MULTIPLEXER_S0_PIN, OUTPUT);
@@ -21,7 +20,11 @@ void RoboKit::init() {
     pinMode(RIGHT_ENCODER_PIN_A, OUTPUT);
     pinMode(RIGHT_ENCODER_PIN_B, OUTPUT);
 
+    motor(0, 0);
+
     Wire.begin();
+
+    run = false;
 
     SerialUSB.println("RoboKit Init!!");
 }
@@ -66,6 +69,7 @@ Line_t RoboKit::readLine(uint8_t sensor) {
     return line;
 }
 
+// -1023 to 1023
 void RoboKit::motor(int L_Power, int R_Power) {
     int outA1, outB1, outA2, outB2;
 
@@ -110,4 +114,24 @@ void RoboKit::motor(int L_Power, int R_Power) {
 RoboKit robot;
 DigitalOut led_1(LED_PIN_1);
 DigitalOut led_2(LED_PIN_1);
-DigitalIn sw_1(SW_PIN, INPUT_PULLUP);
+// DigitalIn sw_1(SW_PIN, INPUT_PULLUP);
+SwitchObserver sw_1(SW_PIN, INPUT_PULLUP);
+
+// # TODO : タイマー割り込み等でsw_1の状態を監視してスイッチが押されたか押されなかったかを監視するプログラムを書く．
+// RTOS??
+void loop() {
+    if (robot.getRun()) {
+        Loop();
+    } else {
+        robot.motor(0, 0);
+        Serial.println("Press sw_1...");
+        delay(100);
+    }
+}
+
+void setup1() {
+}
+void loop1() {
+    sw_1.check();
+    robot.setRun(sw_1.getToggleState());
+}
