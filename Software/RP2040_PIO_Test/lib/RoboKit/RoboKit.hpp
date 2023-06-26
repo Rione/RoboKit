@@ -1,45 +1,3 @@
-
-
-// class RoboKit {
-
-//   public:
-//     RoboKit();
-//     void init();
-//     void setLineThresold(Line_t &line_);
-//     void setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7);
-
-//     int readLine(uint8_t sensor);
-//     Line_t readLines();
-
-//     void motor(int L_Power, int R_Power);
-
-//     bool getRun() {
-//         return run;
-//     }
-
-//     void setRun(bool state) {
-//         run = state;
-//     }
-//     DigitalOut led_1;
-//     DigitalOut led_2;
-//     SwitchObserver sw_1;
-
-//   private:
-//     bool run;
-//     Line_t line;
-// };
-
-// extern RoboKit robot;
-
-// extern DigitalOut led_1;
-// extern DigitalOut led_2;
-// // extern DigitalIn sw_1;
-// extern SwitchObserver sw_1;
-
-// extern void Loop();
-
-// #endif
-
 #ifndef ROBOKIT_H
 #define ROBOKIT_H
 
@@ -135,6 +93,12 @@ class RoboKit {
      */
     void motor(int L_Power, int R_Power);
 
+    /*
+     * @brief モーターの回転方向を設定します。
+     * @param CW_R_ 右モーターの回転方向 (true: CW, false: CCW)
+     * @param CW_L_ 左モーターの回転方向 (true: CW, false: CCW)
+     **/
+    void setMotorCW(bool CW_R_, bool CW_L_);
     /**
      * @brief スイッチが押されたら状態が変化します。
      * @return 実行状態 (true: 実行中, false: 停止中)
@@ -154,6 +118,8 @@ class RoboKit {
   private:
     bool run; /**< ロボットの実行状態 (true: 実行中, false: 停止中) */
     Line_t line;
+    bool CW_R;
+    bool CW_L;
 };
 
 extern RoboKit robot;

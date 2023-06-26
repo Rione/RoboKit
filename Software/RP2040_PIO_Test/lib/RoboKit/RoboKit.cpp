@@ -2,7 +2,8 @@
 
 RoboKit::RoboKit() : led_1(LED_PIN_1), led_2(LED_PIN_2),
                      sw_1(SW_PIN, INPUT_PULLUP),
-                     run(false), line() {
+                     run(false), line(),
+                     CW_R(true), CW_L(true) {
 }
 
 void RoboKit::init() {
@@ -89,6 +90,8 @@ Line_t RoboKit::readLines() {
 void RoboKit::motor(int L_Power, int R_Power) {
     int outA1, outB1, outA2, outB2;
 
+    if (CW_R == false) R_Power = -R_Power;
+    if (CW_L == false) L_Power = -L_Power;
     // Left Motor
     if (L_Power == 0) {
         // BLAKE
