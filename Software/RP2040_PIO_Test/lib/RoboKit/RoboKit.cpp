@@ -56,16 +56,30 @@ void RoboKit::setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, 
         Serial.print(i);
         Serial.print("]:");
         Serial.println(line.thresholds[i]);
+        Serial.print(" ");
     }
     Serial.println("-------------------------------------------");
 }
 
-Line_t RoboKit::readLine(uint8_t sensor) {
+// sensor must be 0 to 7
+int RoboKit::readLine(uint8_t sensor) {
     digitalWrite(MULTIPLEXER_S0_PIN, (sensor & 0b00000001));
     digitalWrite(MULTIPLEXER_S1_PIN, (sensor & 0b00000010));
     digitalWrite(MULTIPLEXER_S2_PIN, (sensor & 0b00000100));
     digitalWrite(MULTIPLEXER_S3_PIN, (sensor & 0b00001000));
     line.values[sensor] = analogRead(MULTIPLEXER_ANALOGIN_PIN);
+    return line.values[sensor];
+}
+
+Line_t RoboKit::readLines() {
+    for (int i = 0; i < LINE_SENSOR_QTY; i++) {
+        readLine(i);
+        if (line.values[i] > line.thresholds[i]) {
+            line.isWhite[i] = true;
+        } else {
+            line.isWhite[i] = false;
+        }
+    }
     return line;
 }
 

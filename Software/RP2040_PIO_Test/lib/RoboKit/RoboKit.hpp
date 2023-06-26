@@ -52,10 +52,10 @@ class RoboKit {
     void setLineThresold(Line_t &line_);
     void setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7);
 
-    Line_t readLine(uint8_t sensor);
+    int readLine(uint8_t sensor);
+    Line_t readLines();
 
     void motor(int L_Power, int R_Power);
-    Line_t line;
 
     bool getRun() {
         return run;
@@ -67,6 +67,7 @@ class RoboKit {
 
   private:
     bool run;
+    Line_t line;
 };
 
 extern RoboKit robot;
