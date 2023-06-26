@@ -2,7 +2,7 @@
 #define IO_WRAPPER_HPP
 
 #include <Arduino.h>
-
+#include <timer.h>
 class DigitalOut {
   public:
     DigitalOut(pin_size_t _pinNumber, PinMode _mode = OUTPUT) {
@@ -41,6 +41,44 @@ class DigitalIn {
   private:
     pin_size_t pinNumber;
     PinMode mode;
+};
+
+class SwitchObserver {
+  public:
+    SwitchObserver(pin_size_t _pinNumber, PinMode _mode = OUTPUT) : sw(_pinNumber, _mode),
+                                                                    Tim(),
+                                                                    state(false),
+                                                                    statePrev(false),
+                                                                    toggleState(false) {
+    }
+    bool check() {
+        state = sw.read();
+        if (Tim.read_ms() > 10) {
+            if (state != statePrev) {
+                toggleState = !toggleState;
+            }
+            Tim.reset();
+            statePrev = state;
+        }
+        return state;
+    }
+    bool getToggleState() {
+        return toggleState;
+    }
+    bool read(void) {
+        return sw.read();
+    }
+
+    operator bool() {
+        return check();
+    }
+
+  private:
+    DigitalIn sw;
+    timer Tim;
+    bool state;
+    bool statePrev;
+    bool toggleState;
 };
 
 #endif
