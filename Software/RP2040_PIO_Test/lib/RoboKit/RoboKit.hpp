@@ -94,7 +94,7 @@ class RoboKit {
      * @brief ラインセンサーの値をSerial Monitorに表示します。
      * @param withRead ラインセンサーの値を読み取るかどうか(true: 読み取って表示, false: 事前に読んだ値を表示)
      */
-    void printLines(bool withRead);
+    void printLines(bool withRead = false);
 
     /**
      * @brief ラインセンサーの値をSerial Monitorに表示します。
