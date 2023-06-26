@@ -1,3 +1,45 @@
+
+
+// class RoboKit {
+
+//   public:
+//     RoboKit();
+//     void init();
+//     void setLineThresold(Line_t &line_);
+//     void setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7);
+
+//     int readLine(uint8_t sensor);
+//     Line_t readLines();
+
+//     void motor(int L_Power, int R_Power);
+
+//     bool getRun() {
+//         return run;
+//     }
+
+//     void setRun(bool state) {
+//         run = state;
+//     }
+//     DigitalOut led_1;
+//     DigitalOut led_2;
+//     SwitchObserver sw_1;
+
+//   private:
+//     bool run;
+//     Line_t line;
+// };
+
+// extern RoboKit robot;
+
+// extern DigitalOut led_1;
+// extern DigitalOut led_2;
+// // extern DigitalIn sw_1;
+// extern SwitchObserver sw_1;
+
+// extern void Loop();
+
+// #endif
+
 #ifndef ROBOKIT_H
 #define ROBOKIT_H
 
@@ -44,39 +86,81 @@ typedef struct {
     bool isWhite[LINE_SENSOR_QTY];
 } Line_t;
 
+/**
+ * @brief RoboKitクラスはロボットキットの機能を制御します。
+ */
 class RoboKit {
+    // ...
 
   public:
+    /**
+     * @brief RoboKitクラスのコンストラクタです。
+     */
     RoboKit();
+
+    /**
+     * @brief ロボットキットの初期化を行います。
+     */
     void init();
+
+    /**
+     * @brief ラインセンサーの閾値を設定します。
+     * @param line_ ラインセンサーの閾値を持つLine_t構造体
+     */
     void setLineThresold(Line_t &line_);
+
+    /**
+     * @brief ラインセンサーの閾値を個別に設定します。
+     * @param thr0, thr1,thr2,thr3,thr4,thr5,thr6,thr7 各センサーの閾値(0~1023)
+     */
     void setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7);
 
+    /**
+     * @brief 指定されたラインセンサーの値を読み取ります。
+     * @param sensor 読み取るセンサーのインデックス
+     * @return ラインセンサーの番号(0~7)
+     */
     int readLine(uint8_t sensor);
+
+    /**
+     * @brief 全てのラインセンサーの値を読み取ります。
+     * @return 全てのラインセンサーの値を含むLine_t構造体
+     */
     Line_t readLines();
 
+    /**
+     * @brief モーターの動作を制御します。
+     * @param L_Power 左モーターのパワー(0~1023)
+     * @param R_Power 右モーターのパワー(0~1023)
+     */
     void motor(int L_Power, int R_Power);
 
-    bool getRun() {
-        return run;
-    }
+    /**
+     * @brief スイッチが押されたら状態が変化します。
+     * @return 実行状態 (true: 実行中, false: 停止中)
+     */
+    bool getRun();
 
-    void setRun(bool state) {
-        run = state;
-    }
+    /**
+     * @brief ロボットの実行状態を設定します。
+     * @param state 設定する実行状態 (true: 実行中, false: 停止中)
+     */
+    void setRun(bool state);
+
+    DigitalOut led_1;    /**< LEDピン 1 の制御オブジェクト */
+    DigitalOut led_2;    /**< LEDピン 2 の制御オブジェクト */
+    SwitchObserver sw_1; /**< スイッチピンの状態を監視するオブジェクト */
 
   private:
-    bool run;
+    bool run; /**< ロボットの実行状態 (true: 実行中, false: 停止中) */
     Line_t line;
 };
 
 extern RoboKit robot;
-
 extern DigitalOut led_1;
 extern DigitalOut led_2;
-// extern DigitalIn sw_1;
 extern SwitchObserver sw_1;
+// extern DigitalIn sw_1;
 
 extern void Loop();
-
 #endif

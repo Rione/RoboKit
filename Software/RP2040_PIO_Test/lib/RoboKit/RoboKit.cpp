@@ -1,6 +1,8 @@
 #include <Robokit.hpp>
 
-RoboKit::RoboKit() {
+RoboKit::RoboKit() : led_1(LED_PIN_1), led_2(LED_PIN_2),
+                     sw_1(SW_PIN, INPUT_PULLUP),
+                     run(false), line() {
 }
 
 void RoboKit::init() {
@@ -125,14 +127,20 @@ void RoboKit::motor(int L_Power, int R_Power) {
     analogWrite(INB_RIGHT_MOTOR_PWM, outB2);
 }
 
+bool RoboKit::getRun() {
+    return run;
+}
+
+void RoboKit::setRun(bool state) {
+    run = state;
+}
+
 RoboKit robot;
 DigitalOut led_1(LED_PIN_1);
 DigitalOut led_2(LED_PIN_1);
 // DigitalIn sw_1(SW_PIN, INPUT_PULLUP);
 SwitchObserver sw_1(SW_PIN, INPUT_PULLUP);
 
-// # TODO : タイマー割り込み等でsw_1の状態を監視してスイッチが押されたか押されなかったかを監視するプログラムを書く．
-// RTOS??
 void loop() {
     if (robot.getRun()) {
         Loop();
