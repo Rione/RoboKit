@@ -84,7 +84,7 @@ void RoboKit::setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, 
         Serial.print(i);
         Serial.print("]:");
         Serial.println(line.thresholds[i]);
-        Serial.print(" ");
+        Serial.print("\t");
     }
     Serial.println("-------------------------------------------");
 }
@@ -109,6 +109,29 @@ Line_t RoboKit::readLines() {
         }
     }
     return line;
+}
+
+void RoboKit::printLine(bool withRead = false) {
+    if (withRead) readLines();
+    for (size_t i = 0; i < LINE_SENSOR_QTY; i++) {
+        Serial.print("val[");
+        Serial.print(i);
+        Serial.print("]:");
+        Serial.println(line.values[i]);
+        Serial.print("\t");
+    }
+    SerialUSB.println();
+}
+
+void RoboKit::printLine(Line_t line_) {
+    for (size_t i = 0; i < LINE_SENSOR_QTY; i++) {
+        Serial.print("val[");
+        Serial.print(i);
+        Serial.print("]:");
+        Serial.println(line_.values[i]);
+        Serial.print("\t");
+    }
+    SerialUSB.println();
 }
 
 // -1023 to 1023

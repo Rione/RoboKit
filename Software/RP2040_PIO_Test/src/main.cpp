@@ -11,15 +11,16 @@ void Loop() {
     robot.setLineThresold(0, 0, 0, 0, 0, 0, 0, 0);
 
     // ラインセンサの閾値を設定する関数
-    Line_t lineThreshold;
-    lineThreshold.thresholds[0] = 0;
-    lineThreshold.thresholds[1] = 0;
-    lineThreshold.thresholds[2] = 0;
-    lineThreshold.thresholds[3] = 0;
-    lineThreshold.thresholds[4] = 0;
-    lineThreshold.thresholds[5] = 0;
-    lineThreshold.thresholds[6] = 0;
-    lineThreshold.thresholds[7] = 0;
+    Line_t lineThreshold = {
+        .thresholds = {200, 200, 200, 200, 200, 200, 200, 200}};
+    // lineThreshold.thresholds[0] = 0;
+    // lineThreshold.thresholds[1] = 0;
+    // lineThreshold.thresholds[2] = 0;
+    // lineThreshold.thresholds[3] = 0;
+    // lineThreshold.thresholds[4] = 0;
+    // lineThreshold.thresholds[5] = 0;
+    // lineThreshold.thresholds[6] = 0;
+    // lineThreshold.thresholds[7] = 0;
     robot.setLineThresold(lineThreshold);
 
     // ラインセンサの値を個別に取得するメソッド
@@ -32,19 +33,19 @@ void Loop() {
     int val6 = robot.readLine(6);
     int val7 = robot.readLine(7);
     SerialUSB.print(val0);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val1);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val2);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val3);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val4);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val5);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val6);
-    SerialUSB.print(" ");
+    SerialUSB.print("\t");
     SerialUSB.print(val7);
     SerialUSB.println();
 
@@ -55,7 +56,7 @@ void Loop() {
         Serial.print(i);
         Serial.print("]:");
         Serial.println(line.values[i]);
-        Serial.print(" ");
+        Serial.print("\t");
     }
     SerialUSB.println();
 
@@ -68,7 +69,7 @@ void Loop() {
         Serial.print(i);
         Serial.print("]:");
         Serial.println(isWhite[i]);
-        Serial.print(" ");
+        Serial.print("\t");
     }
     SerialUSB.println();
 

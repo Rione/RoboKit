@@ -91,6 +91,18 @@ class RoboKit {
     Line_t readLines();
 
     /**
+     * @brief ラインセンサーの値をSerial Monitorに表示します。
+     * @param withRead ラインセンサーの値を読み取るかどうか(true: 読み取って表示, false: 事前に読んだ値を表示)
+     */
+    void printLine(bool withRead);
+
+    /**
+     * @brief ラインセンサーの値をSerial Monitorに表示します。
+     * @param line_ ラインセンサーの値を持つLine_t構造体
+     */
+    void printLine(Line_t line_);
+
+    /**
      * @brief モーターの動作を制御します。
      * @param L_Power 左モーターのパワー(0~1023)
      * @param R_Power 右モーターのパワー(0~1023)
