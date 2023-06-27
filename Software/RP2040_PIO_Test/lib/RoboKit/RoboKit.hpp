@@ -111,8 +111,8 @@ class RoboKit {
 
     /**
      * @brief モーターの動作を制御します。
-     * @param L_Power 左モーターのパワー(0~1023)
-     * @param R_Power 右モーターのパワー(0~1023)
+     * @param L_Power 左モーターのパワー(-1023~1023)
+     * @param R_Power 右モーターのパワー(-1023~1023)
      */
     void motor(int L_Power, int R_Power);
 

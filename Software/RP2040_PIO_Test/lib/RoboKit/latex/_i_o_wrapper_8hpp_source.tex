@@ -57,7 +57,7 @@
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ check()\ \{}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ state\ =\ sw.read();}
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Tim.read\_ms()\ >\ 10)\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ !=\ statePrev)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state\ !=\ statePrev\ \&\&\ state\ ==\ LOW)\ \{}
 \DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ toggleState\ =\ !toggleState;}
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ Tim.reset();}

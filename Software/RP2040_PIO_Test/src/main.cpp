@@ -9,5 +9,5 @@ void setup() {
 void Loop() {
     robot.readLines();  // 読み取り
     robot.printLines(); // プリント
-    delay(1);
+    delay(10);
 }
