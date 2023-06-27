@@ -1,0 +1,311 @@
+\doxysection{Robo\+Kit Class Reference}
+\hypertarget{class_robo_kit}{}\label{class_robo_kit}\index{RoboKit@{RoboKit}}
+
+
+Robo\+Kitクラスはロボットキットの機能を制御します。  
+
+
+
+
+{\ttfamily \#include $<$Robo\+Kit.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_robo_kit_afa0165d2b4f4e7e582a87df86df87a56}\label{class_robo_kit_afa0165d2b4f4e7e582a87df86df87a56} 
+{\bfseries Robo\+Kit} ()
+\begin{DoxyCompactList}\small\item\em Robo\+Kitクラスのコンストラクタです。 \end{DoxyCompactList}\item 
+\Hypertarget{class_robo_kit_a1e70a154e675c3deadcc179ffcfa53a4}\label{class_robo_kit_a1e70a154e675c3deadcc179ffcfa53a4} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em ロボットキットの初期化を行います。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{set\+Line\+Thresold}} (\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} \&line\+\_\+)
+\begin{DoxyCompactList}\small\item\em ラインセンサーの閾値を設定します。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_a1f5f78202f29f8bfe5d7fd42b40c0802}{set\+Line\+Thresold}} (int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7)
+\begin{DoxyCompactList}\small\item\em ラインセンサーの閾値を個別に設定します。 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_robo_kit_a9bef4db7004e6bf6eeb47716bc458aea}{read\+Line}} (uint8\+\_\+t sensor)
+\begin{DoxyCompactList}\small\item\em 指定されたラインセンサーの値を読み取ります。 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} \mbox{\hyperlink{class_robo_kit_a5444ee02ba942721bc3d4fc26eaac81e}{read\+Lines}} ()
+\begin{DoxyCompactList}\small\item\em 全てのラインセンサーの値を読み取ります。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{print\+Lines}} (bool with\+Read=false)
+\begin{DoxyCompactList}\small\item\em ラインセンサーの値を\+Serial Monitorに表示します。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_a11974c30dc6ebc1b6456836797d1aee3}{print\+Lines}} (\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} \&line\+\_\+)
+\begin{DoxyCompactList}\small\item\em ラインセンサーの値を\+Serial Monitorに表示します。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_a6346f8113e7cd5a56cad821874c7b3be}{motor}} (int L\+\_\+\+Power, int R\+\_\+\+Power)
+\begin{DoxyCompactList}\small\item\em モーターの動作を制御します。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_a148c3487e6412bd37139ee870ce52f45}{set\+Motor\+CW}} (bool CW\+\_\+\+R\+\_\+, bool CW\+\_\+\+L\+\_\+)
+\begin{DoxyCompactList}\small\item\em モーターの回転方向を設定します。 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_robo_kit_ad36dabcb98005dda74cddde043085994}{get\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em To\+Fセンサーで距離の値を読み取ります。 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_robo_kit_ae1a9f437bc0d98068ee7b88ff8c9b923}{get\+Yaw}} ()
+\begin{DoxyCompactList}\small\item\em Get the Yaw object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87}{get\+Pitch}} ()
+\begin{DoxyCompactList}\small\item\em Get the Pitch object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0}{get\+Roll}} ()
+\begin{DoxyCompactList}\small\item\em Get the Roll object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535}{get\+Run}} ()
+\begin{DoxyCompactList}\small\item\em スイッチが押されたら状態が変化します。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}{set\+Run}} (bool state)
+\begin{DoxyCompactList}\small\item\em ロボットの実行状態を設定します。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_digital_out}{Digital\+Out}} \mbox{\hyperlink{class_robo_kit_a8d34229b5edf143ac2e142c42a172f2f}{led\+\_\+1}}
+\item 
+\mbox{\hyperlink{class_digital_out}{Digital\+Out}} \mbox{\hyperlink{class_robo_kit_ae83e8cf93a722af1b123181168a408cf}{led\+\_\+2}}
+\item 
+\mbox{\hyperlink{class_switch_observer}{Switch\+Observer}} \mbox{\hyperlink{class_robo_kit_acfd55a2f916fccc2050e4dde15d6ce69}{sw\+\_\+1}}
+\item 
+VL53\+L0X \mbox{\hyperlink{class_robo_kit_a903003ae839f1b52163123b75efb2cd8}{tof}}
+\item 
+Adafruit\+\_\+\+BNO055 \mbox{\hyperlink{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105}{bno}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Robo\+Kitクラスはロボットキットの機能を制御します。 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_robo_kit_ad36dabcb98005dda74cddde043085994}\label{class_robo_kit_ad36dabcb98005dda74cddde043085994} 
+\index{RoboKit@{RoboKit}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily int Robo\+Kit\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+To\+Fセンサーで距離の値を読み取ります。 
+
+\begin{DoxyReturn}{Returns}
+距離の値(mm) 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87}\label{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87} 
+\index{RoboKit@{RoboKit}!getPitch@{getPitch}}
+\index{getPitch@{getPitch}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{getPitch()}{getPitch()}}
+{\footnotesize\ttfamily double Robo\+Kit\+::get\+Pitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Pitch object. 
+
+\begin{DoxyReturn}{Returns}
+double Pitch angle (degree) 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0}\label{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0} 
+\index{RoboKit@{RoboKit}!getRoll@{getRoll}}
+\index{getRoll@{getRoll}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{getRoll()}{getRoll()}}
+{\footnotesize\ttfamily double Robo\+Kit\+::get\+Roll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Roll object. 
+
+\begin{DoxyReturn}{Returns}
+double Roll angle (degree) 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535}\label{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535} 
+\index{RoboKit@{RoboKit}!getRun@{getRun}}
+\index{getRun@{getRun}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{getRun()}{getRun()}}
+{\footnotesize\ttfamily bool Robo\+Kit\+::get\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+スイッチが押されたら状態が変化します。 
+
+\begin{DoxyReturn}{Returns}
+実行状態 (true\+: 実行中, false\+: 停止中) 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_ae1a9f437bc0d98068ee7b88ff8c9b923}\label{class_robo_kit_ae1a9f437bc0d98068ee7b88ff8c9b923} 
+\index{RoboKit@{RoboKit}!getYaw@{getYaw}}
+\index{getYaw@{getYaw}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{getYaw()}{getYaw()}}
+{\footnotesize\ttfamily double Robo\+Kit\+::get\+Yaw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Yaw object. 
+
+\begin{DoxyReturn}{Returns}
+double() Yaw angle (degree) 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_a6346f8113e7cd5a56cad821874c7b3be}\label{class_robo_kit_a6346f8113e7cd5a56cad821874c7b3be} 
+\index{RoboKit@{RoboKit}!motor@{motor}}
+\index{motor@{motor}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{motor()}{motor()}}
+{\footnotesize\ttfamily void Robo\+Kit\+::motor (\begin{DoxyParamCaption}\item[{int}]{L\+\_\+\+Power,  }\item[{int}]{R\+\_\+\+Power }\end{DoxyParamCaption})}
+
+
+
+モーターの動作を制御します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em L\+\_\+\+Power} & 左モーターのパワー(0\texorpdfstring{$\sim$}{\string~}1023) \\
+\hline
+{\em R\+\_\+\+Power} & 右モーターのパワー(0\texorpdfstring{$\sim$}{\string~}1023) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}\label{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9} 
+\index{RoboKit@{RoboKit}!printLines@{printLines}}
+\index{printLines@{printLines}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{printLines()}{printLines()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Robo\+Kit\+::print\+Lines (\begin{DoxyParamCaption}\item[{bool}]{with\+Read = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+ラインセンサーの値を\+Serial Monitorに表示します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em with\+Read} & ラインセンサーの値を読み取るかどうか(true\+: 読み取って表示, false\+: 事前に読んだ値を表示) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_robo_kit_a11974c30dc6ebc1b6456836797d1aee3}\label{class_robo_kit_a11974c30dc6ebc1b6456836797d1aee3} 
+\index{RoboKit@{RoboKit}!printLines@{printLines}}
+\index{printLines@{printLines}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{printLines()}{printLines()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Robo\+Kit\+::print\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} \&}]{line\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+ラインセンサーの値を\+Serial Monitorに表示します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+\_\+} & ラインセンサーの値を持つ\+Line\+\_\+t構造体 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_robo_kit_a9bef4db7004e6bf6eeb47716bc458aea}\label{class_robo_kit_a9bef4db7004e6bf6eeb47716bc458aea} 
+\index{RoboKit@{RoboKit}!readLine@{readLine}}
+\index{readLine@{readLine}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{readLine()}{readLine()}}
+{\footnotesize\ttfamily int Robo\+Kit\+::read\+Line (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sensor }\end{DoxyParamCaption})}
+
+
+
+指定されたラインセンサーの値を読み取ります。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & 読み取るセンサーのインデックス \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ラインセンサーの番号(0\texorpdfstring{$\sim$}{\string~}7) 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_a5444ee02ba942721bc3d4fc26eaac81e}\label{class_robo_kit_a5444ee02ba942721bc3d4fc26eaac81e} 
+\index{RoboKit@{RoboKit}!readLines@{readLines}}
+\index{readLines@{readLines}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{readLines()}{readLines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} Robo\+Kit\+::read\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+全てのラインセンサーの値を読み取ります。 
+
+\begin{DoxyReturn}{Returns}
+全てのラインセンサーの値を含む\+Line\+\_\+t構造体 
+\end{DoxyReturn}
+\Hypertarget{class_robo_kit_a1f5f78202f29f8bfe5d7fd42b40c0802}\label{class_robo_kit_a1f5f78202f29f8bfe5d7fd42b40c0802} 
+\index{RoboKit@{RoboKit}!setLineThresold@{setLineThresold}}
+\index{setLineThresold@{setLineThresold}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{setLineThresold()}{setLineThresold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Robo\+Kit\+::set\+Line\+Thresold (\begin{DoxyParamCaption}\item[{int}]{thr0,  }\item[{int}]{thr1,  }\item[{int}]{thr2,  }\item[{int}]{thr3,  }\item[{int}]{thr4,  }\item[{int}]{thr5,  }\item[{int}]{thr6,  }\item[{int}]{thr7 }\end{DoxyParamCaption})}
+
+
+
+ラインセンサーの閾値を個別に設定します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thr0,thr1,thr2,thr3,thr4,thr5,thr6,thr7} & 各センサーの閾値(0\texorpdfstring{$\sim$}{\string~}1023) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}\label{class_robo_kit_a32053f9af573a592a4b86aa616139ebc} 
+\index{RoboKit@{RoboKit}!setLineThresold@{setLineThresold}}
+\index{setLineThresold@{setLineThresold}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{setLineThresold()}{setLineThresold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Robo\+Kit\+::set\+Line\+Thresold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_line__t}{Line\+\_\+t}} \&}]{line\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+ラインセンサーの閾値を設定します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+\_\+} & ラインセンサーの閾値を持つ\+Line\+\_\+t構造体 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_robo_kit_a148c3487e6412bd37139ee870ce52f45}\label{class_robo_kit_a148c3487e6412bd37139ee870ce52f45} 
+\index{RoboKit@{RoboKit}!setMotorCW@{setMotorCW}}
+\index{setMotorCW@{setMotorCW}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{setMotorCW()}{setMotorCW()}}
+{\footnotesize\ttfamily void Robo\+Kit\+::set\+Motor\+CW (\begin{DoxyParamCaption}\item[{bool}]{CW\+\_\+\+R\+\_\+,  }\item[{bool}]{CW\+\_\+\+L\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+モーターの回転方向を設定します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CW\+\_\+\+R\+\_\+} & 右モーターの回転方向 (true\+: CW, false\+: CCW) \\
+\hline
+{\em CW\+\_\+\+L\+\_\+} & 左モーターの回転方向 (true\+: CW, false\+: CCW) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}\label{class_robo_kit_ab56f25199d02b9014267cd77aad002b3} 
+\index{RoboKit@{RoboKit}!setRun@{setRun}}
+\index{setRun@{setRun}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{setRun()}{setRun()}}
+{\footnotesize\ttfamily void Robo\+Kit\+::set\+Run (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+ロボットの実行状態を設定します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & 設定する実行状態 (true\+: 実行中, false\+: 停止中) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105}\label{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105} 
+\index{RoboKit@{RoboKit}!bno@{bno}}
+\index{bno@{bno}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{bno}{bno}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+BNO055 Robo\+Kit\+::bno}
+
+IMUの制御オブジェクト \Hypertarget{class_robo_kit_a8d34229b5edf143ac2e142c42a172f2f}\label{class_robo_kit_a8d34229b5edf143ac2e142c42a172f2f} 
+\index{RoboKit@{RoboKit}!led\_1@{led\_1}}
+\index{led\_1@{led\_1}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{led\_1}{led\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_digital_out}{Digital\+Out}} Robo\+Kit\+::led\+\_\+1}
+
+LEDピン 1 の制御オブジェクト \Hypertarget{class_robo_kit_ae83e8cf93a722af1b123181168a408cf}\label{class_robo_kit_ae83e8cf93a722af1b123181168a408cf} 
+\index{RoboKit@{RoboKit}!led\_2@{led\_2}}
+\index{led\_2@{led\_2}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{led\_2}{led\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_digital_out}{Digital\+Out}} Robo\+Kit\+::led\+\_\+2}
+
+LEDピン 2 の制御オブジェクト \Hypertarget{class_robo_kit_acfd55a2f916fccc2050e4dde15d6ce69}\label{class_robo_kit_acfd55a2f916fccc2050e4dde15d6ce69} 
+\index{RoboKit@{RoboKit}!sw\_1@{sw\_1}}
+\index{sw\_1@{sw\_1}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{sw\_1}{sw\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_switch_observer}{Switch\+Observer}} Robo\+Kit\+::sw\+\_\+1}
+
+スイッチピンの状態を監視するオブジェクト \Hypertarget{class_robo_kit_a903003ae839f1b52163123b75efb2cd8}\label{class_robo_kit_a903003ae839f1b52163123b75efb2cd8} 
+\index{RoboKit@{RoboKit}!tof@{tof}}
+\index{tof@{tof}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{tof}{tof}}
+{\footnotesize\ttfamily VL53\+L0X Robo\+Kit\+::tof}
+
+距離センサーの制御オブジェクト 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_robo_kit_8hpp}{Robo\+Kit.\+hpp}}\item 
+Robo\+Kit.\+cpp\end{DoxyCompactItemize}

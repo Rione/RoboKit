@@ -1,0 +1,123 @@
+\doxysection{Robo\+Kit.\+hpp File Reference}
+\hypertarget{_robo_kit_8hpp}{}\label{_robo_kit_8hpp}\index{RoboKit.hpp@{RoboKit.hpp}}
+
+
+Robo\+Kitクラスのヘッダファイルです。  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include $<$IOWrapper.\+hpp$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$SPI.\+h$>$}\newline
+{\ttfamily \#include $<$VL53\+L0\+X.\+h$>$}\newline
+{\ttfamily \#include $<$timer.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+Sensor.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+BNO055.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_line__t}{Line\+\_\+t}}
+\item 
+class \mbox{\hyperlink{class_robo_kit}{Robo\+Kit}}
+\begin{DoxyCompactList}\small\item\em Robo\+Kitクラスはロボットキットの機能を制御します。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_robo_kit_8hpp_a65cdb91c1cc0874ce448adb4a050502f}\label{_robo_kit_8hpp_a65cdb91c1cc0874ce448adb4a050502f} 
+\#define {\bfseries INA\+\_\+\+LEFT\+\_\+\+MOTOR\+\_\+\+PWM}~0
+\item 
+\Hypertarget{_robo_kit_8hpp_a0cdacfb28ac212302fbf4626631eda2d}\label{_robo_kit_8hpp_a0cdacfb28ac212302fbf4626631eda2d} 
+\#define {\bfseries INB\+\_\+\+LEFT\+\_\+\+MOTOR\+\_\+\+PWM}~1
+\item 
+\Hypertarget{_robo_kit_8hpp_a69a935a901b4d825dce9683c9a85e1aa}\label{_robo_kit_8hpp_a69a935a901b4d825dce9683c9a85e1aa} 
+\#define {\bfseries INA\+\_\+\+RIGHT\+\_\+\+MOTOR\+\_\+\+PWM}~2
+\item 
+\Hypertarget{_robo_kit_8hpp_a6b36f0728863de4037adc95d4c4c7608}\label{_robo_kit_8hpp_a6b36f0728863de4037adc95d4c4c7608} 
+\#define {\bfseries INB\+\_\+\+RIGHT\+\_\+\+MOTOR\+\_\+\+PWM}~3
+\item 
+\Hypertarget{_robo_kit_8hpp_a1a3748ad4d3d5bf76d01affa8b5561cf}\label{_robo_kit_8hpp_a1a3748ad4d3d5bf76d01affa8b5561cf} 
+\#define {\bfseries LEFT\+\_\+\+ENCODER\+\_\+\+PIN\+\_\+A}~7
+\item 
+\Hypertarget{_robo_kit_8hpp_ab78583c33dafa5124c9a710138d75956}\label{_robo_kit_8hpp_ab78583c33dafa5124c9a710138d75956} 
+\#define {\bfseries LEFT\+\_\+\+ENCODER\+\_\+\+PIN\+\_\+B}~8
+\item 
+\Hypertarget{_robo_kit_8hpp_aef82337da8d1fc310596a5ae901cc0da}\label{_robo_kit_8hpp_aef82337da8d1fc310596a5ae901cc0da} 
+\#define {\bfseries RIGHT\+\_\+\+ENCODER\+\_\+\+PIN\+\_\+A}~21
+\item 
+\Hypertarget{_robo_kit_8hpp_ae9448e31efd15fce95504e48be7cd002}\label{_robo_kit_8hpp_ae9448e31efd15fce95504e48be7cd002} 
+\#define {\bfseries RIGHT\+\_\+\+ENCODER\+\_\+\+PIN\+\_\+B}~22
+\item 
+\Hypertarget{_robo_kit_8hpp_a2cade698267beb86ccaa38c14d35ab0f}\label{_robo_kit_8hpp_a2cade698267beb86ccaa38c14d35ab0f} 
+\#define {\bfseries I2\+C\+\_\+\+SDA\+\_\+\+PIN}~4
+\item 
+\Hypertarget{_robo_kit_8hpp_a0e4e08bab2fb484136d18b067bef372c}\label{_robo_kit_8hpp_a0e4e08bab2fb484136d18b067bef372c} 
+\#define {\bfseries I2\+C\+\_\+\+SCL\+\_\+\+PIN}~5
+\item 
+\Hypertarget{_robo_kit_8hpp_ae994d17d63dc3fbb2f52e106ac76ce63}\label{_robo_kit_8hpp_ae994d17d63dc3fbb2f52e106ac76ce63} 
+\#define {\bfseries LED\+\_\+\+PIN\+\_\+1}~13
+\item 
+\Hypertarget{_robo_kit_8hpp_a86d49149bbf5f49a2497e05f9b54ded1}\label{_robo_kit_8hpp_a86d49149bbf5f49a2497e05f9b54ded1} 
+\#define {\bfseries LED\+\_\+\+PIN\+\_\+2}~14
+\item 
+\Hypertarget{_robo_kit_8hpp_a86b9c20e880244f4b4000c7e02232cb0}\label{_robo_kit_8hpp_a86b9c20e880244f4b4000c7e02232cb0} 
+\#define {\bfseries SW\+\_\+\+PIN}~15
+\item 
+\Hypertarget{_robo_kit_8hpp_ab61d0981ed42df9e18211b273d22cfcd}\label{_robo_kit_8hpp_ab61d0981ed42df9e18211b273d22cfcd} 
+\#define {\bfseries BUZZER\+\_\+\+PIN}~20
+\item 
+\Hypertarget{_robo_kit_8hpp_ae72cdddd14bec3fcda4f5fb45d85cf07}\label{_robo_kit_8hpp_ae72cdddd14bec3fcda4f5fb45d85cf07} 
+\#define {\bfseries MULTIPLEXER\+\_\+\+S0\+\_\+\+PIN}~16
+\item 
+\Hypertarget{_robo_kit_8hpp_a9108ae57cdfa062c187aa5cc8f26d150}\label{_robo_kit_8hpp_a9108ae57cdfa062c187aa5cc8f26d150} 
+\#define {\bfseries MULTIPLEXER\+\_\+\+S1\+\_\+\+PIN}~17
+\item 
+\Hypertarget{_robo_kit_8hpp_af5111ffb5d852acd8d3cb2658abe404f}\label{_robo_kit_8hpp_af5111ffb5d852acd8d3cb2658abe404f} 
+\#define {\bfseries MULTIPLEXER\+\_\+\+S2\+\_\+\+PIN}~18
+\item 
+\Hypertarget{_robo_kit_8hpp_a88e1a87286d3ab53f285f9ee6b706d19}\label{_robo_kit_8hpp_a88e1a87286d3ab53f285f9ee6b706d19} 
+\#define {\bfseries MULTIPLEXER\+\_\+\+S3\+\_\+\+PIN}~19
+\item 
+\Hypertarget{_robo_kit_8hpp_ab2813142cef3013d86011104d1ec5561}\label{_robo_kit_8hpp_ab2813142cef3013d86011104d1ec5561} 
+\#define {\bfseries MULTIPLEXER\+\_\+\+ANALOGIN\+\_\+\+PIN}~26
+\item 
+\Hypertarget{_robo_kit_8hpp_a5dfc5179421c63ab2c2b25dca3aea3f3}\label{_robo_kit_8hpp_a5dfc5179421c63ab2c2b25dca3aea3f3} 
+\#define {\bfseries ANALOG\+\_\+\+IO\+\_\+\+PORT\+\_\+\+PIN}~28
+\item 
+\Hypertarget{_robo_kit_8hpp_a9b5cac7a1dc5fc0e947eab1fa72f8be9}\label{_robo_kit_8hpp_a9b5cac7a1dc5fc0e947eab1fa72f8be9} 
+\#define {\bfseries LINE\+\_\+\+SENSOR\+\_\+\+QTY}~8
+\item 
+\Hypertarget{_robo_kit_8hpp_a75e86990b32c9eeec34563e8fb102be1}\label{_robo_kit_8hpp_a75e86990b32c9eeec34563e8fb102be1} 
+\#define {\bfseries MOTOR\+\_\+\+MAXPOWER}~1023
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_robo_kit_8hpp_a3cc03ff338ebac1a1602f9069f137d5a}\label{_robo_kit_8hpp_a3cc03ff338ebac1a1602f9069f137d5a} 
+void {\bfseries Loop} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_robo_kit_8hpp_a4ec1f5df8e1fd632abb62794c2b406e8}\label{_robo_kit_8hpp_a4ec1f5df8e1fd632abb62794c2b406e8} 
+\mbox{\hyperlink{class_robo_kit}{Robo\+Kit}} {\bfseries robot}
+\item 
+\Hypertarget{_robo_kit_8hpp_a37046d33b8b4c7bc44e95608dda80a61}\label{_robo_kit_8hpp_a37046d33b8b4c7bc44e95608dda80a61} 
+\mbox{\hyperlink{class_digital_out}{Digital\+Out}} {\bfseries led\+\_\+1}
+\item 
+\Hypertarget{_robo_kit_8hpp_aba9ec1aec6244e0b603a4db9b1ddd52b}\label{_robo_kit_8hpp_aba9ec1aec6244e0b603a4db9b1ddd52b} 
+\mbox{\hyperlink{class_digital_out}{Digital\+Out}} {\bfseries led\+\_\+2}
+\item 
+\Hypertarget{_robo_kit_8hpp_a1b112021b0b87b7654e43892b7f5331f}\label{_robo_kit_8hpp_a1b112021b0b87b7654e43892b7f5331f} 
+\mbox{\hyperlink{class_switch_observer}{Switch\+Observer}} {\bfseries sw\+\_\+1}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Robo\+Kitクラスのヘッダファイルです。 
+
+\begin{DoxyAuthor}{Author}
+Daiki Tomioka @\+Tomi\+XRM 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023/06/27 
+\end{DoxyDate}

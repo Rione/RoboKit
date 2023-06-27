@@ -1,3 +1,10 @@
+/**
+ * @file   RoboKit.hpp
+ * @brief  RoboKitクラスのヘッダファイルです。
+ * @author Daiki Tomioka @TomiXRM
+ * @date   2023/06/27
+ */
+
 #ifndef ROBOKIT_H
 #define ROBOKIT_H
 

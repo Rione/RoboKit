@@ -1,0 +1,114 @@
+\doxysection{Robo\+Kit.\+hpp}
+\hypertarget{_robo_kit_8hpp_source}{}\label{_robo_kit_8hpp_source}\mbox{\hyperlink{_robo_kit_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ ROBOKIT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ROBOKIT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <IOWrapper.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <SPI.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <VL53L0X.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <timer.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <Adafruit\_Sensor.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <Adafruit\_BNO055.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Pin\ Definition}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ INA\_LEFT\_MOTOR\_PWM\ 0}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ INB\_LEFT\_MOTOR\_PWM\ 1}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ INA\_RIGHT\_MOTOR\_PWM\ 2}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ INB\_RIGHT\_MOTOR\_PWM\ 3}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ LEFT\_ENCODER\_PIN\_A\ 7}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LEFT\_ENCODER\_PIN\_B\ 8}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ RIGHT\_ENCODER\_PIN\_A\ 21}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ RIGHT\_ENCODER\_PIN\_B\ 22}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ I2C\_SDA\_PIN\ 4}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ I2C\_SCL\_PIN\ 5}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LED\_PIN\_1\ 13}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LED\_PIN\_2\ 14}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SW\_PIN\ 15}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 20}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MULTIPLEXER\_S0\_PIN\ 16}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ MULTIPLEXER\_S1\_PIN\ 17}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MULTIPLEXER\_S2\_PIN\ 18}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MULTIPLEXER\_S3\_PIN\ 19}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MULTIPLEXER\_ANALOGIN\_PIN\ 26}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ANALOG\_IO\_PORT\_PIN\ 28}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ parameters}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LINE\_SENSOR\_QTY\ 8}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MOTOR\_MAXPOWER\ 1023}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ varuable\ definition}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ values[LINE\_SENSOR\_QTY];}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ thresholds[LINE\_SENSOR\_QTY];}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ isWhite[LINE\_SENSOR\_QTY];}
+\DoxyCodeLine{00056\ \}\ \mbox{\hyperlink{struct_line__t}{Line\_t}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_robo_kit}{RoboKit}}\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_robo_kit_afa0165d2b4f4e7e582a87df86df87a56}{RoboKit}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a1e70a154e675c3deadcc179ffcfa53a4}{init}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{setLineThresold}}(\mbox{\hyperlink{struct_line__t}{Line\_t}}\ \&line\_);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{setLineThresold}}(\textcolor{keywordtype}{int}\ thr0,\ \textcolor{keywordtype}{int}\ thr1,\ \textcolor{keywordtype}{int}\ thr2,\ \textcolor{keywordtype}{int}\ thr3,\ \textcolor{keywordtype}{int}\ thr4,\ \textcolor{keywordtype}{int}\ thr5,\ \textcolor{keywordtype}{int}\ thr6,\ \textcolor{keywordtype}{int}\ thr7);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_robo_kit_a9bef4db7004e6bf6eeb47716bc458aea}{readLine}}(uint8\_t\ sensor);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{struct_line__t}{Line\_t}}\ \mbox{\hyperlink{class_robo_kit_a5444ee02ba942721bc3d4fc26eaac81e}{readLines}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{printLines}}(\textcolor{keywordtype}{bool}\ withRead\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{printLines}}(\mbox{\hyperlink{struct_line__t}{Line\_t}}\ \&line\_);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a6346f8113e7cd5a56cad821874c7b3be}{motor}}(\textcolor{keywordtype}{int}\ L\_Power,\ \textcolor{keywordtype}{int}\ R\_Power);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a148c3487e6412bd37139ee870ce52f45}{setMotorCW}}(\textcolor{keywordtype}{bool}\ CW\_R\_,\ \textcolor{keywordtype}{bool}\ CW\_L\_);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_robo_kit_ad36dabcb98005dda74cddde043085994}{getDistance}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_ae1a9f437bc0d98068ee7b88ff8c9b923}{getYaw}}();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87}{getPitch}}();}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0}{getRoll}}();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535}{getRun}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}{setRun}}(\textcolor{keywordtype}{bool}\ state);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ \mbox{\hyperlink{class_robo_kit_a8d34229b5edf143ac2e142c42a172f2f}{led\_1}};\ \ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ \mbox{\hyperlink{class_robo_kit_ae83e8cf93a722af1b123181168a408cf}{led\_2}};\ \ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{class_switch_observer}{SwitchObserver}}\ \mbox{\hyperlink{class_robo_kit_acfd55a2f916fccc2050e4dde15d6ce69}{sw\_1}};\ }
+\DoxyCodeLine{00167\ \ \ \ \ VL53L0X\ \mbox{\hyperlink{class_robo_kit_a903003ae839f1b52163123b75efb2cd8}{tof}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00168\ \ \ \ \ Adafruit\_BNO055\ \mbox{\hyperlink{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105}{bno}};\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ initVL53L0X();}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ initBNO055();}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{bool}\ run;\ }
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{struct_line__t}{Line\_t}}\ line;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ CW\_R;}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ CW\_L;}
+\DoxyCodeLine{00177\ \};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_robo_kit}{RoboKit}}\ robot;}
+\DoxyCodeLine{00180\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ led\_1;}
+\DoxyCodeLine{00181\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ led\_2;}
+\DoxyCodeLine{00182\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_switch_observer}{SwitchObserver}}\ sw\_1;}
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ extern\ DigitalIn\ sw\_1;}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ Loop();}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
