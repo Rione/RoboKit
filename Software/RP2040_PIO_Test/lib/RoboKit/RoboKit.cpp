@@ -8,16 +8,11 @@ RoboKit::RoboKit() : led_1(LED_PIN_1), led_2(LED_PIN_2),
 }
 
 void RoboKit::init() {
-    // Line sensor
-    pinMode(MULTIPLEXER_S0_PIN, OUTPUT);
-    pinMode(MULTIPLEXER_S1_PIN, OUTPUT);
-    pinMode(MULTIPLEXER_S2_PIN, OUTPUT);
-    pinMode(MULTIPLEXER_S3_PIN, OUTPUT);
-    for (int i = 0; i < LINE_SENSOR_QTY; i++) {
-        line.values[i] = 0;
-        line.thresholds[i] = 0;
-        line.isWhite[i] = 0;
-    }
+    // Motor Driver
+    pinMode(INA_LEFT_MOTOR_PWM, OUTPUT);
+    pinMode(INB_LEFT_MOTOR_PWM, OUTPUT);
+    pinMode(INA_RIGHT_MOTOR_PWM, OUTPUT);
+    pinMode(INB_RIGHT_MOTOR_PWM, OUTPUT);
     // Motor Encoder
     pinMode(LEFT_ENCODER_PIN_A, OUTPUT);
     pinMode(LEFT_ENCODER_PIN_B, OUTPUT);
@@ -25,22 +20,35 @@ void RoboKit::init() {
     pinMode(RIGHT_ENCODER_PIN_B, OUTPUT);
 
     motor(0, 0);
+    setMotorCW(false, true);
+    // Line sensor
+    pinMode(MULTIPLEXER_S0_PIN, OUTPUT);
+    pinMode(MULTIPLEXER_S1_PIN, OUTPUT);
+    pinMode(MULTIPLEXER_S2_PIN, OUTPUT);
+    pinMode(MULTIPLEXER_S3_PIN, OUTPUT);
+
+    for (int i = 0; i < LINE_SENSOR_QTY; i++) {
+        line.values[i] = 0;
+        line.thresholds[i] = 0;
+        line.isWhite[i] = 0;
+    }
 
     Wire.begin();
-    initVL53L0X();
+    // initVL53L0X();
     initBNO055();
     run = false;
 
-    SerialUSB.println("RoboKit Init!!");
+    Serial.println("RoboKit Init!!");
 }
 
 void RoboKit::initVL53L0X() {
     tof.setTimeout(500);
-    if (!tof.init()) {
-        SerialUSB.println("Failed to detect and initialize sensor!");
-        while (1)
-            ;
-    }
+    if (!tof.init())
+        while (1) {
+            Serial.println("Failed to detect and initialize sensor!");
+            delay(100);
+        }
+
     tof.setSignalRateLimit(0.1);
     tof.setVcselPulsePeriod(VL53L0X::VcselPeriodPreRange, 18);
     tof.setVcselPulsePeriod(VL53L0X::VcselPeriodFinalRange, 14);
@@ -48,11 +56,12 @@ void RoboKit::initVL53L0X() {
 
 void RoboKit::initBNO055() {
     // BNO055
-    if (!bno.begin()) {
-        SerialUSB.print("No BNO055 detected");
-        while (1)
-            ;
-    }
+    if (!bno.begin())
+        while (1) {
+            Serial.print("No BNO055 detected");
+            delay(100);
+        }
+
     delay(1000);
     bno.setExtCrystalUse(true);
 }
@@ -111,7 +120,7 @@ Line_t RoboKit::readLines() {
     return line;
 }
 
-void RoboKit::printLines(bool withRead = false) {
+void RoboKit::printLines(bool withRead) {
     if (withRead) readLines();
     for (size_t i = 0; i < LINE_SENSOR_QTY; i++) {
         Serial.print("val[");
@@ -120,7 +129,7 @@ void RoboKit::printLines(bool withRead = false) {
         Serial.println(line.values[i]);
         Serial.print("\t");
     }
-    SerialUSB.println();
+    Serial.println();
 }
 
 void RoboKit::printLines(Line_t &line_) {
@@ -131,7 +140,7 @@ void RoboKit::printLines(Line_t &line_) {
         Serial.println(line_.values[i]);
         Serial.print("\t");
     }
-    SerialUSB.println();
+    Serial.println();
 }
 
 // -1023 to 1023
@@ -219,19 +228,21 @@ DigitalOut led_2(LED_PIN_1);
 // DigitalIn sw_1(SW_PIN, INPUT_PULLUP);
 SwitchObserver sw_1(SW_PIN, INPUT_PULLUP);
 
-void loop() {
-    if (robot.getRun()) {
-        Loop();
-    } else {
-        robot.motor(0, 0);
-        Serial.println("Press sw_1...");
-        delay(100);
-    }
-}
-
 void setup1() {
 }
 void loop1() {
     sw_1.check();
     robot.setRun(sw_1.getToggleState());
+    // Serial.println("sw_1");
+    delay(10);
+}
+void loop() {
+    if (robot.getRun()) {
+        Loop();
+    } else {
+        robot.motor(0, 0);
+        Serial.print(robot.sw_1.read());
+        Serial.println("Press sw_1...");
+        delay(100);
+    }
 }

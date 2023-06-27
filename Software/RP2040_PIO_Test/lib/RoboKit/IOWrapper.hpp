@@ -54,7 +54,7 @@ class SwitchObserver {
     bool check() {
         state = sw.read();
         if (Tim.read_ms() > 10) {
-            if (state != statePrev) {
+            if (state != statePrev && state == LOW) {
                 toggleState = !toggleState;
             }
             Tim.reset();
