@@ -8,6 +8,7 @@ RoboKit::RoboKit() : led_1(LED_PIN_1), led_2(LED_PIN_2),
 }
 
 void RoboKit::init() {
+    Serial.begin();
     // Motor Driver
     pinMode(INA_LEFT_MOTOR_PWM, OUTPUT);
     pinMode(INB_LEFT_MOTOR_PWM, OUTPUT);
@@ -100,12 +101,12 @@ void RoboKit::setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, 
 
 // sensor must be 0 to 7
 int RoboKit::readLine(uint8_t sensor) {
-    digitalWrite(MULTIPLEXER_S0_PIN, (sensor & 0b00000001));
-    digitalWrite(MULTIPLEXER_S1_PIN, (sensor & 0b00000010));
-    digitalWrite(MULTIPLEXER_S2_PIN, (sensor & 0b00000100));
-    digitalWrite(MULTIPLEXER_S3_PIN, (sensor & 0b00001000));
+    digitalWrite(MULTIPLEXER_S0_PIN, bitRead(sensor, 0));
+    digitalWrite(MULTIPLEXER_S1_PIN, bitRead(sensor, 1));
+    digitalWrite(MULTIPLEXER_S2_PIN, bitRead(sensor, 2));
+    digitalWrite(MULTIPLEXER_S3_PIN, bitRead(sensor, 3));
     line.values[sensor] = analogRead(MULTIPLEXER_ANALOGIN_PIN);
-    if (line.values[sensor] > line.thresholds[sensor]) {
+    if (line.values[sensor] < line.thresholds[sensor]) {
         line.isWhite[sensor] = true;
     } else {
         line.isWhite[sensor] = false;
@@ -126,7 +127,7 @@ void RoboKit::printLines(bool withRead) {
         Serial.print("val[");
         Serial.print(i);
         Serial.print("]:");
-        Serial.println(line.values[i]);
+        Serial.print(line.values[i]);
         Serial.print("\t");
     }
     Serial.println();
@@ -239,8 +240,8 @@ void loop() {
         Loop();
     } else {
         robot.motor(0, 0);
-        Serial.print(robot.sw_1.read());
-        Serial.println("Press sw_1...");
+        Serial.print("Press sw_1...");
+        Serial.println(robot.sw_1.read());
         delay(100);
     }
 }
