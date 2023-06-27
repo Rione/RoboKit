@@ -225,7 +225,6 @@ void RoboKit::setRun(bool state) {
 RoboKit robot;
 DigitalOut led_1(LED_PIN_1);
 DigitalOut led_2(LED_PIN_1);
-// DigitalIn sw_1(SW_PIN, INPUT_PULLUP);
 SwitchObserver sw_1(SW_PIN, INPUT_PULLUP);
 
 void setup1() {
@@ -233,7 +232,6 @@ void setup1() {
 void loop1() {
     sw_1.check();
     robot.setRun(sw_1.getToggleState());
-    // Serial.println("sw_1");
     delay(10);
 }
 void loop() {

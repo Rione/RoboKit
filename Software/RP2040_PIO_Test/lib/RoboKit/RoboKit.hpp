@@ -180,7 +180,6 @@ extern RoboKit robot;
 extern DigitalOut led_1;
 extern DigitalOut led_2;
 extern SwitchObserver sw_1;
-// extern DigitalIn sw_1;
 
 extern void Loop();
 #endif
