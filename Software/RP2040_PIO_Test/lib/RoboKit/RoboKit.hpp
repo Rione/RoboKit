@@ -118,8 +118,8 @@ class RoboKit {
 
     /**
      * @brief モーターの回転方向を設定します。
-     * @param CW_R_ 右モーターの回転方向 (true: CW, false: CCW)
-     * @param CW_L_ 左モーターの回転方向 (true: CW, false: CCW)
+     * @param CW_R_ 右モーターの回転方向 (true: CW(時計回り), false: CCW(反時計回り))
+     * @param CW_L_ 左モーターの回転方向 (true: CW(時計回り), false: CCW(反時計回り))
      **/
     void setMotorCW(bool CW_R_, bool CW_L_);
 
