@@ -14,6 +14,8 @@ void RoboKit::init() {
     pinMode(INB_LEFT_MOTOR_PWM, OUTPUT);
     pinMode(INA_RIGHT_MOTOR_PWM, OUTPUT);
     pinMode(INB_RIGHT_MOTOR_PWM, OUTPUT);
+    // analogWriteRange(1024);
+    analogWriteFreq(30000);
     // Motor Encoder
     pinMode(LEFT_ENCODER_PIN_A, OUTPUT);
     pinMode(LEFT_ENCODER_PIN_B, OUTPUT);
@@ -153,8 +155,8 @@ void RoboKit::motor(int L_Power, int R_Power) {
     // Left Motor
     if (L_Power == 0) {
         // BLAKE
-        outA1 = 255;
-        outB1 = 255;
+        outA1 = MOTOR_MAXPOWER;
+        outB1 = MOTOR_MAXPOWER;
     } else {
         if (L_Power > 0) {
             // CCW
@@ -169,8 +171,8 @@ void RoboKit::motor(int L_Power, int R_Power) {
     // Right Motor
     if (R_Power == 0) {
         // BLAKE
-        outA2 = 255;
-        outB2 = 255;
+        outA2 = MOTOR_MAXPOWER;
+        outB2 = MOTOR_MAXPOWER;
     } else {
         if (R_Power > 0) {
             // CCW

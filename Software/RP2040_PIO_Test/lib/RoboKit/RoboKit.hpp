@@ -46,7 +46,7 @@
 
 // parameters
 #define LINE_SENSOR_QTY 8
-#define MOTOR_MAXPOWER 1023
+#define MOTOR_MAXPOWER 255
 
 // varuable definition
 typedef struct {
@@ -111,8 +111,8 @@ class RoboKit {
 
     /**
      * @brief モーターの動作を制御します。
-     * @param L_Power 左モーターのパワー(-1023~1023)
-     * @param R_Power 右モーターのパワー(-1023~1023)
+     * @param L_Power 左モーターのパワー(-255~255)
+     * @param R_Power 右モーターのパワー(-255~255)
      */
     void motor(int L_Power, int R_Power);
 
