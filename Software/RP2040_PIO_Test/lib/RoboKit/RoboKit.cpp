@@ -4,7 +4,7 @@ RoboKit::RoboKit() : led_1(LED_PIN_1), led_2(LED_PIN_2),
                      sw_1(SW_PIN, INPUT_PULLUP),
                      tof(), bno(55),
                      run(false), line(),
-                     CW_R(true), CW_L(true) {
+                     CW_R(true), CW_L(true), u8g2(U8G2_R1) {
 }
 
 void RoboKit::init() {
@@ -37,8 +37,10 @@ void RoboKit::init() {
     }
 
     Wire.begin();
+    Wire.setClock(400000);
     // initVL53L0X();
     initBNO055();
+    initDisplay();
     run = false;
 
     Serial.println("RoboKit Init!!");
@@ -67,6 +69,16 @@ void RoboKit::initBNO055() {
 
     delay(1000);
     bno.setExtCrystalUse(true);
+}
+
+void RoboKit::initDisplay() {
+    u8g2.begin();
+    u8g2.setContrast(1);
+
+    u8g2.clearBuffer();
+    u8g2.setFont(u8g2_font_crox1hb_tf);
+    u8g2.drawStr(0, 8, "Hello world");
+    u8g2.sendBuffer();
 }
 
 void RoboKit::setLineThresold(Line_t &line_) {
@@ -217,6 +229,17 @@ double RoboKit::getRoll() {
     return euler.z();
 }
 
+void RoboKit::setLCD(int row, int col, const char *str) {
+    u8g2.setFont(u8g2_font_crox1hb_tf);
+    u8g2.drawStr(col, row * 8, str);
+    u8g2.sendBuffer();
+}
+
+void RoboKit::clearLCD() {
+    u8g2.clearBuffer();
+    u8g2.sendBuffer();
+}
+
 bool RoboKit::getRun() {
     return run;
 }
@@ -244,6 +267,8 @@ void loop() {
         robot.motor(0, 0);
         Serial.print("Press sw_1...");
         Serial.println(robot.sw_1.read());
+        robot.clearLCD();
+        robot.setLCD(8, 8, "wait ");
         delay(100);
     }
 }

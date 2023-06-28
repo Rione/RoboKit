@@ -13,6 +13,7 @@ Robo\+Kitクラスのヘッダファイルです。
 {\ttfamily \#include $<$timer.\+h$>$}\newline
 {\ttfamily \#include $<$Adafruit\+\_\+\+Sensor.\+h$>$}\newline
 {\ttfamily \#include $<$Adafruit\+\_\+\+BNO055.\+h$>$}\newline
+{\ttfamily \#include $<$U8g2lib.\+h$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -92,9 +93,9 @@ class \mbox{\hyperlink{class_robo_kit}{Robo\+Kit}}
 \Hypertarget{_robo_kit_8hpp_a2cb115168e232b5c247fc6c7995c2064}\label{_robo_kit_8hpp_a2cb115168e232b5c247fc6c7995c2064} 
 \#define {\bfseries TOF\+\_\+\+TIMEOUT}~500
 \item 
-\#define \mbox{\hyperlink{_robo_kit_8hpp_a80a189eed51a8d3b45cbe4cfb7c63293}{wait}}(t)~delay\+Microseconds((uint16\+\_\+t)(t \texorpdfstring{$\ast$}{*} 10e6))
+\#define \mbox{\hyperlink{_robo_kit_8hpp_a80a189eed51a8d3b45cbe4cfb7c63293}{wait}}(t)~delay(t \texorpdfstring{$\ast$}{*} 1000)
 \begin{DoxyCompactList}\small\item\em 指定された時間だけ待機します。 \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{_robo_kit_8hpp_af06e22dde09b08a48a54382d985d246e}{wait\+\_\+ms}}(t)~delay\+Microseconds((uint16\+\_\+t)(t \texorpdfstring{$\ast$}{*} 10e6))
+\#define \mbox{\hyperlink{_robo_kit_8hpp_af06e22dde09b08a48a54382d985d246e}{wait\+\_\+ms}}(t)~delay(t)
 \begin{DoxyCompactList}\small\item\em 指定された時間だけ待機します。 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -135,7 +136,7 @@ Daiki Tomioka @\+Tomi\+XRM
 \index{RoboKit.hpp@{RoboKit.hpp}!wait@{wait}}
 \index{wait@{wait}!RoboKit.hpp@{RoboKit.hpp}}
 \doxysubsubsection{\texorpdfstring{wait}{wait}}
-{\footnotesize\ttfamily \#define wait(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~delay\+Microseconds((uint16\+\_\+t)(t \texorpdfstring{$\ast$}{*} 10e6))}
+{\footnotesize\ttfamily \#define wait(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~delay(t \texorpdfstring{$\ast$}{*} 1000)}
 
 
 
@@ -150,7 +151,7 @@ Daiki Tomioka @\+Tomi\+XRM
 \index{RoboKit.hpp@{RoboKit.hpp}!wait\_ms@{wait\_ms}}
 \index{wait\_ms@{wait\_ms}!RoboKit.hpp@{RoboKit.hpp}}
 \doxysubsubsection{\texorpdfstring{wait\_ms}{wait\_ms}}
-{\footnotesize\ttfamily \#define wait\+\_\+ms(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~delay\+Microseconds((uint16\+\_\+t)(t \texorpdfstring{$\ast$}{*} 10e6))}
+{\footnotesize\ttfamily \#define wait\+\_\+ms(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~delay(t)}
 
 
 

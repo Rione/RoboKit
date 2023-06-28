@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setlinethresold_0',['setLineThresold',['../class_robo_kit.html#a32053f9af573a592a4b86aa616139ebc',1,'RoboKit::setLineThresold(Line_t &amp;line_)'],['../class_robo_kit.html#a1f5f78202f29f8bfe5d7fd42b40c0802',1,'RoboKit::setLineThresold(int thr0, int thr1, int thr2, int thr3, int thr4, int thr5, int thr6, int thr7)']]],
-  ['setmotorcw_1',['setMotorCW',['../class_robo_kit.html#a148c3487e6412bd37139ee870ce52f45',1,'RoboKit']]],
-  ['setrun_2',['setRun',['../class_robo_kit.html#ab56f25199d02b9014267cd77aad002b3',1,'RoboKit']]]
+  ['readline_0',['readLine',['../class_robo_kit.html#a9bef4db7004e6bf6eeb47716bc458aea',1,'RoboKit']]],
+  ['readlines_1',['readLines',['../class_robo_kit.html#a5444ee02ba942721bc3d4fc26eaac81e',1,'RoboKit']]],
+  ['robokit_2',['RoboKit',['../class_robo_kit.html#afa0165d2b4f4e7e582a87df86df87a56',1,'RoboKit']]]
 ];

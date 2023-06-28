@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['digitalin_0',['DigitalIn',['../class_digital_in.html',1,'']]],
-  ['digitalout_1',['DigitalOut',['../class_digital_out.html',1,'']]]
+  ['clearlcd_0',['clearLCD',['../class_robo_kit.html#a88c3f15ff32f8e0d7bbf0181f7c57c03',1,'RoboKit']]]
 ];

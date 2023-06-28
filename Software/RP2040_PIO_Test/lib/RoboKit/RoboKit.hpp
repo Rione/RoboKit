@@ -16,6 +16,7 @@
 #include <timer.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BNO055.h>
+#include <U8g2lib.h>
 
 // Pin Definition
 #define INA_LEFT_MOTOR_PWM 0
@@ -168,6 +169,18 @@ class RoboKit {
     double getRoll();
 
     /**
+     * @brief LCDに文字列を表示します。
+     * @param row 表示する行(0~15)
+     * @param col 表示する列(0~12)
+     * @param str 表示する文字列
+     */
+    void setLCD(int row, int col, const char *str);
+
+    /**
+     * @brief LCDをクリアします。
+     */
+    void clearLCD();
+    /**
      * @brief スイッチが押されたら状態が変化します。
      * @return 実行状態 (true: 実行中, false: 停止中)
      */
@@ -179,15 +192,17 @@ class RoboKit {
      */
     void setRun(bool state);
 
-    DigitalOut led_1;    /**< LEDピン 1 の制御オブジェクト */
-    DigitalOut led_2;    /**< LEDピン 2 の制御オブジェクト */
-    SwitchObserver sw_1; /**< スイッチピンの状態を監視するオブジェクト */
-    VL53L0X tof;         /**< 距離センサーの制御オブジェクト */
-    Adafruit_BNO055 bno; /**< IMUの制御オブジェクト */
+    DigitalOut led_1;                         /**< LEDピン 1 の制御オブジェクト */
+    DigitalOut led_2;                         /**< LEDピン 2 の制御オブジェクト */
+    SwitchObserver sw_1;                      /**< スイッチピンの状態を監視するオブジェクト */
+    VL53L0X tof;                              /**< 距離センサーの制御オブジェクト */
+    Adafruit_BNO055 bno;                      /**< IMUの制御オブジェクト */
+    U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2; /**< OLEDディスプレイの制御オブジェクト */
 
   private:
     void initVL53L0X();
     void initBNO055();
+    void initDisplay();
     bool run;    /**< ロボットの実行状態 (true: 実行中, false: 停止中) */
     Line_t line; /**< ラインセンサーの値を格納する構造体 */
     bool CW_R;   /**< 右モーターの回転方向 (true: CW(時計回り), false: CCW(反時計回り)) */

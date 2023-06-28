@@ -42,6 +42,11 @@ double \mbox{\hyperlink{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87}{get\+P
 \begin{DoxyCompactList}\small\item\em Get the Pitch object. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0}{get\+Roll}} ()
 \begin{DoxyCompactList}\small\item\em Get the Roll object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robo_kit_ab44bb41c755bbe0bb25eba6820e3b101}{set\+LCD}} (int row, int col, const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em LCDに文字列を表示します。 \end{DoxyCompactList}\item 
+\Hypertarget{class_robo_kit_a88c3f15ff32f8e0d7bbf0181f7c57c03}\label{class_robo_kit_a88c3f15ff32f8e0d7bbf0181f7c57c03} 
+void {\bfseries clear\+LCD} ()
+\begin{DoxyCompactList}\small\item\em LCDをクリアします。 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535}{get\+Run}} ()
 \begin{DoxyCompactList}\small\item\em スイッチが押されたら状態が変化します。 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}{set\+Run}} (bool state)
@@ -58,6 +63,8 @@ void \mbox{\hyperlink{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}{set\+Run
 VL53\+L0X \mbox{\hyperlink{class_robo_kit_a903003ae839f1b52163123b75efb2cd8}{tof}}
 \item 
 Adafruit\+\_\+\+BNO055 \mbox{\hyperlink{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105}{bno}}
+\item 
+U8\+G2\+\_\+\+SSD1306\+\_\+128\+X64\+\_\+\+NONAME\+\_\+\+F\+\_\+\+HW\+\_\+\+I2C \mbox{\hyperlink{class_robo_kit_afd241ecca1b18af231f64f817ad0d5f6}{u8g2}}
 \end{DoxyCompactItemize}
 
 
@@ -208,6 +215,25 @@ double() Yaw angle (degree)
 \begin{DoxyReturn}{Returns}
 全てのラインセンサーの値を含む\+Line\+\_\+t構造体 
 \end{DoxyReturn}
+\Hypertarget{class_robo_kit_ab44bb41c755bbe0bb25eba6820e3b101}\label{class_robo_kit_ab44bb41c755bbe0bb25eba6820e3b101} 
+\index{RoboKit@{RoboKit}!setLCD@{setLCD}}
+\index{setLCD@{setLCD}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{setLCD()}{setLCD()}}
+{\footnotesize\ttfamily void Robo\+Kit\+::set\+LCD (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+LCDに文字列を表示します。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & 表示する行(0\texorpdfstring{$\sim$}{\string~}15) \\
+\hline
+{\em col} & 表示する列(0\texorpdfstring{$\sim$}{\string~}12) \\
+\hline
+{\em str} & 表示する文字列 \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_robo_kit_a1f5f78202f29f8bfe5d7fd42b40c0802}\label{class_robo_kit_a1f5f78202f29f8bfe5d7fd42b40c0802} 
 \index{RoboKit@{RoboKit}!setLineThresold@{setLineThresold}}
 \index{setLineThresold@{setLineThresold}!RoboKit@{RoboKit}}
@@ -303,7 +329,13 @@ LEDピン 2 の制御オブジェクト \Hypertarget{class_robo_kit_acfd55a2f916
 \doxysubsubsection{\texorpdfstring{tof}{tof}}
 {\footnotesize\ttfamily VL53\+L0X Robo\+Kit\+::tof}
 
-距離センサーの制御オブジェクト 
+距離センサーの制御オブジェクト \Hypertarget{class_robo_kit_afd241ecca1b18af231f64f817ad0d5f6}\label{class_robo_kit_afd241ecca1b18af231f64f817ad0d5f6} 
+\index{RoboKit@{RoboKit}!u8g2@{u8g2}}
+\index{u8g2@{u8g2}!RoboKit@{RoboKit}}
+\doxysubsubsection{\texorpdfstring{u8g2}{u8g2}}
+{\footnotesize\ttfamily U8\+G2\+\_\+\+SSD1306\+\_\+128\+X64\+\_\+\+NONAME\+\_\+\+F\+\_\+\+HW\+\_\+\+I2C Robo\+Kit\+::u8g2}
+
+OLEDディスプレイの制御オブジェクト 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

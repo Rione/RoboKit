@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motor_0',['motor',['../class_robo_kit.html#a6346f8113e7cd5a56cad821874c7b3be',1,'RoboKit']]]
+  ['init_0',['init',['../class_robo_kit.html#a1e70a154e675c3deadcc179ffcfa53a4',1,'RoboKit']]]
 ];
