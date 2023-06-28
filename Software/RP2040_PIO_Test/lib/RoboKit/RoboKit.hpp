@@ -48,7 +48,25 @@
 #define LINE_SENSOR_QTY 8
 #define MOTOR_MAXPOWER 255
 
+#define TOF_TIMEOUT 500
+
+// macros definition
+/**
+ * @brief 指定された時間だけ待機します。
+ * @param t 待機する時間(秒)
+ */
+#define wait(t) delayMicroseconds((uint16_t)(t * 10e6))
+
+/**
+ * @brief 指定された時間だけ待機します。
+ * @param t 待機する時間(ミリ秒)
+ */
+#define wait_ms(t) delayMicroseconds((uint16_t)(t * 10e6))
+
 // varuable definition
+/**
+ * @brief ラインセンサーの値を格納する構造体です。
+ */
 typedef struct {
     int values[LINE_SENSOR_QTY];
     int thresholds[LINE_SENSOR_QTY];
@@ -170,10 +188,10 @@ class RoboKit {
   private:
     void initVL53L0X();
     void initBNO055();
-    bool run; /**< ロボットの実行状態 (true: 実行中, false: 停止中) */
-    Line_t line;
-    bool CW_R;
-    bool CW_L;
+    bool run;    /**< ロボットの実行状態 (true: 実行中, false: 停止中) */
+    Line_t line; /**< ラインセンサーの値を格納する構造体 */
+    bool CW_R;   /**< 右モーターの回転方向 (true: CW(時計回り), false: CCW(反時計回り)) */
+    bool CW_L;   /**< 左モーターの回転方向 (true: CW(時計回り), false: CCW(反時計回り)) */
 };
 
 extern RoboKit robot;

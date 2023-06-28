@@ -45,7 +45,7 @@ void RoboKit::init() {
 }
 
 void RoboKit::initVL53L0X() {
-    tof.setTimeout(500);
+    tof.setTimeout(TOF_TIMEOUT);
     if (!tof.init())
         while (1) {
             Serial.println("Failed to detect and initialize sensor!");
@@ -146,7 +146,7 @@ void RoboKit::printLines(Line_t &line_) {
     Serial.println();
 }
 
-// -1023 to 1023
+// -255 to 255
 void RoboKit::motor(int L_Power, int R_Power) {
     int outA1, outB1, outA2, outB2;
 
