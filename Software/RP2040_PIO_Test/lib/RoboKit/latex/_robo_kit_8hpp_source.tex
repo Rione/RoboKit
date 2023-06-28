@@ -45,69 +45,76 @@
 \DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LINE\_SENSOR\_QTY\ 8}}
 \DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ MOTOR\_MAXPOWER\ 255}}
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{comment}{//\ varuable\ definition}}
-\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ values[LINE\_SENSOR\_QTY];}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ thresholds[LINE\_SENSOR\_QTY];}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ isWhite[LINE\_SENSOR\_QTY];}
-\DoxyCodeLine{00056\ \}\ \mbox{\hyperlink{struct_line__t}{Line\_t}};}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_robo_kit}{RoboKit}}\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ ...}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_robo_kit_afa0165d2b4f4e7e582a87df86df87a56}{RoboKit}}();}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a1e70a154e675c3deadcc179ffcfa53a4}{init}}();}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{setLineThresold}}(\mbox{\hyperlink{struct_line__t}{Line\_t}}\ \&line\_);}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{setLineThresold}}(\textcolor{keywordtype}{int}\ thr0,\ \textcolor{keywordtype}{int}\ thr1,\ \textcolor{keywordtype}{int}\ thr2,\ \textcolor{keywordtype}{int}\ thr3,\ \textcolor{keywordtype}{int}\ thr4,\ \textcolor{keywordtype}{int}\ thr5,\ \textcolor{keywordtype}{int}\ thr6,\ \textcolor{keywordtype}{int}\ thr7);}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_robo_kit_a9bef4db7004e6bf6eeb47716bc458aea}{readLine}}(uint8\_t\ sensor);}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{struct_line__t}{Line\_t}}\ \mbox{\hyperlink{class_robo_kit_a5444ee02ba942721bc3d4fc26eaac81e}{readLines}}();}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{printLines}}(\textcolor{keywordtype}{bool}\ withRead\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{printLines}}(\mbox{\hyperlink{struct_line__t}{Line\_t}}\ \&line\_);}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ TOF\_TIMEOUT\ 500}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ macros\ definition}}
+\DoxyCodeLine{00058\ \textcolor{comment}{}\textcolor{preprocessor}{\#define\ wait(t)\ delayMicroseconds((uint16\_t)(t\ *\ 10e6))}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ wait\_ms(t)\ delayMicroseconds((uint16\_t)(t\ *\ 10e6))}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ varuable\ definition}}
+\DoxyCodeLine{00070\ \textcolor{comment}{}\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ values[LINE\_SENSOR\_QTY];}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ thresholds[LINE\_SENSOR\_QTY];}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ isWhite[LINE\_SENSOR\_QTY];}
+\DoxyCodeLine{00074\ \}\ \mbox{\hyperlink{struct_line__t}{Line\_t}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_robo_kit}{RoboKit}}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_robo_kit_afa0165d2b4f4e7e582a87df86df87a56}{RoboKit}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a1e70a154e675c3deadcc179ffcfa53a4}{init}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{setLineThresold}}(\mbox{\hyperlink{struct_line__t}{Line\_t}}\ \&line\_);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a32053f9af573a592a4b86aa616139ebc}{setLineThresold}}(\textcolor{keywordtype}{int}\ thr0,\ \textcolor{keywordtype}{int}\ thr1,\ \textcolor{keywordtype}{int}\ thr2,\ \textcolor{keywordtype}{int}\ thr3,\ \textcolor{keywordtype}{int}\ thr4,\ \textcolor{keywordtype}{int}\ thr5,\ \textcolor{keywordtype}{int}\ thr6,\ \textcolor{keywordtype}{int}\ thr7);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_robo_kit_a9bef4db7004e6bf6eeb47716bc458aea}{readLine}}(uint8\_t\ sensor);}
 \DoxyCodeLine{00111\ }
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a6346f8113e7cd5a56cad821874c7b3be}{motor}}(\textcolor{keywordtype}{int}\ L\_Power,\ \textcolor{keywordtype}{int}\ R\_Power);}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a148c3487e6412bd37139ee870ce52f45}{setMotorCW}}(\textcolor{keywordtype}{bool}\ CW\_R\_,\ \textcolor{keywordtype}{bool}\ CW\_L\_);}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_robo_kit_ad36dabcb98005dda74cddde043085994}{getDistance}}();}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_ae1a9f437bc0d98068ee7b88ff8c9b923}{getYaw}}();}
-\DoxyCodeLine{00137\ }
-\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87}{getPitch}}();}
-\DoxyCodeLine{00144\ }
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0}{getRoll}}();}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535}{getRun}}();}
-\DoxyCodeLine{00157\ }
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}{setRun}}(\textcolor{keywordtype}{bool}\ state);}
-\DoxyCodeLine{00163\ }
-\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ \mbox{\hyperlink{class_robo_kit_a8d34229b5edf143ac2e142c42a172f2f}{led\_1}};\ \ \ \ }
-\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ \mbox{\hyperlink{class_robo_kit_ae83e8cf93a722af1b123181168a408cf}{led\_2}};\ \ \ \ }
-\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{class_switch_observer}{SwitchObserver}}\ \mbox{\hyperlink{class_robo_kit_acfd55a2f916fccc2050e4dde15d6ce69}{sw\_1}};\ }
-\DoxyCodeLine{00167\ \ \ \ \ VL53L0X\ \mbox{\hyperlink{class_robo_kit_a903003ae839f1b52163123b75efb2cd8}{tof}};\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00168\ \ \ \ \ Adafruit\_BNO055\ \mbox{\hyperlink{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105}{bno}};\ }
-\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ initVL53L0X();}
-\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ initBNO055();}
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{bool}\ run;\ }
-\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{struct_line__t}{Line\_t}}\ line;}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ CW\_R;}
-\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ CW\_L;}
-\DoxyCodeLine{00177\ \};}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_robo_kit}{RoboKit}}\ robot;}
-\DoxyCodeLine{00180\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ led\_1;}
-\DoxyCodeLine{00181\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ led\_2;}
-\DoxyCodeLine{00182\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_switch_observer}{SwitchObserver}}\ sw\_1;}
-\DoxyCodeLine{00183\ }
-\DoxyCodeLine{00184\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ Loop();}
-\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{struct_line__t}{Line\_t}}\ \mbox{\hyperlink{class_robo_kit_a5444ee02ba942721bc3d4fc26eaac81e}{readLines}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{printLines}}(\textcolor{keywordtype}{bool}\ withRead\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ae9c75b880ae52e23b0b0d5ea51e9ebb9}{printLines}}(\mbox{\hyperlink{struct_line__t}{Line\_t}}\ \&line\_);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a6346f8113e7cd5a56cad821874c7b3be}{motor}}(\textcolor{keywordtype}{int}\ L\_Power,\ \textcolor{keywordtype}{int}\ R\_Power);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_a148c3487e6412bd37139ee870ce52f45}{setMotorCW}}(\textcolor{keywordtype}{bool}\ CW\_R\_,\ \textcolor{keywordtype}{bool}\ CW\_L\_);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_robo_kit_ad36dabcb98005dda74cddde043085994}{getDistance}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_ae1a9f437bc0d98068ee7b88ff8c9b923}{getYaw}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_a04ac4592f56f828ca26d2255ba973d87}{getPitch}}();}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_robo_kit_af794309bc24bc4fbddd59505702e0ee0}{getRoll}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_robo_kit_aca49a78fb0b5d2f3a1031c3afccef535}{getRun}}();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_robo_kit_ab56f25199d02b9014267cd77aad002b3}{setRun}}(\textcolor{keywordtype}{bool}\ state);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ \mbox{\hyperlink{class_robo_kit_a8d34229b5edf143ac2e142c42a172f2f}{led\_1}};\ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ \mbox{\hyperlink{class_robo_kit_ae83e8cf93a722af1b123181168a408cf}{led\_2}};\ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{class_switch_observer}{SwitchObserver}}\ \mbox{\hyperlink{class_robo_kit_acfd55a2f916fccc2050e4dde15d6ce69}{sw\_1}};\ }
+\DoxyCodeLine{00185\ \ \ \ \ VL53L0X\ \mbox{\hyperlink{class_robo_kit_a903003ae839f1b52163123b75efb2cd8}{tof}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ Adafruit\_BNO055\ \mbox{\hyperlink{class_robo_kit_aaa64596c8a440e1ab9720c90aa06d105}{bno}};\ }
+\DoxyCodeLine{00188\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ initVL53L0X();}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ initBNO055();}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{bool}\ run;\ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{struct_line__t}{Line\_t}}\ line;\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{bool}\ CW\_R;\ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{bool}\ CW\_L;\ \ \ }
+\DoxyCodeLine{00195\ \};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_robo_kit}{RoboKit}}\ robot;}
+\DoxyCodeLine{00198\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ led\_1;}
+\DoxyCodeLine{00199\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_digital_out}{DigitalOut}}\ led\_2;}
+\DoxyCodeLine{00200\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_switch_observer}{SwitchObserver}}\ sw\_1;}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ Loop();}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
