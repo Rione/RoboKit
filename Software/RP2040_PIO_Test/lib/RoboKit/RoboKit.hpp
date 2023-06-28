@@ -55,13 +55,13 @@
  * @brief 指定された時間だけ待機します。
  * @param t 待機する時間(秒)
  */
-#define wait(t) delayMicroseconds((uint16_t)(t * 10e6))
+#define wait(t) delay(t * 1000)
 
 /**
  * @brief 指定された時間だけ待機します。
  * @param t 待機する時間(ミリ秒)
  */
-#define wait_ms(t) delayMicroseconds((uint16_t)(t * 10e6))
+#define wait_ms(t) delay(t)
 
 // varuable definition
 /**

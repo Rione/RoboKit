@@ -5,6 +5,8 @@ void setup() {
 }
 
 void Loop() {
-    robot.motor(200, 200);
-    wait(1.0);
+    robot.motor(100, 100);
+    wait(1);
+    robot.motor(0, 0);
+    wait(1);
 }
